@@ -1,0 +1,43 @@
+# baseURI: http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo
+# imports: http://www.reiter.at/ontology/bpmn2.0
+
+@prefix : <http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo#> .
+@prefix bpmn2: <http://www.reiter.at/ontology/bpmn2.0> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo>
+  rdf:type owl:Ontology ;
+  dc:creator [
+      rdf:type foaf:Person ;
+      foaf:name "Philipp Hagedorn" ;
+    ] ;
+  owl:imports <http://www.reiter.at/ontology/bpmn2.0> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:InformationUnit
+  rdf:type owl:Class ;
+  rdfs:label "InformationArtifact" ;
+  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#DataObject> ;
+  rdfs:subClassOf owl:Thing ;
+.
+:InformationDelivery
+  rdf:type owl:Class ;
+  rdfs:label "InformationDelivery" ;
+  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#Task> ;
+  rdfs:subClassOf owl:Thing ;
+.
+:InformationRequirement
+  rdf:type owl:Class ;
+  rdfs:label "InformationRequirements" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:InformationStatus
+  rdf:type owl:Class ;
+  rdfs:label "InformationStatus" ;
+  rdfs:subClassOf owl:Thing ;
+.
