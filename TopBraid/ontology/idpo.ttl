@@ -1,4 +1,6 @@
 # baseURI: http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
 # imports: http://www.reiter.at/ontology/bpmn2.0
 
 @prefix : <http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo#> .
@@ -8,6 +10,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo>
@@ -16,14 +19,12 @@
       rdf:type foaf:Person ;
       foaf:name "Philipp Hagedorn" ;
     ] ;
+  dc:description "The inked Building Data Information Delivery Ontology (LID) is defined for ..." ;
+  dc:title "LBD Information Delivery Ontology (LID)" ;
+  owl:imports dc: ;
+  owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.reiter.at/ontology/bpmn2.0> ;
   owl:versionInfo "Created with TopBraid Composer" ;
-.
-:InformationUnit
-  rdf:type owl:Class ;
-  rdfs:label "InformationArtifact" ;
-  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#DataObject> ;
-  rdfs:subClassOf owl:Thing ;
 .
 :InformationDelivery
   rdf:type owl:Class ;
@@ -31,13 +32,61 @@
   rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#Task> ;
   rdfs:subClassOf owl:Thing ;
 .
+:InformationObject
+  rdf:type owl:Class ;
+  rdfs:label "InformationObject" ;
+  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#DataObject> ;
+  rdfs:subClassOf owl:Thing ;
+.
 :InformationRequirement
   rdf:type owl:Class ;
-  rdfs:label "InformationRequirements" ;
+  rdfs:label "InformationRequirement" ;
   rdfs:subClassOf owl:Thing ;
 .
 :InformationStatus
   rdf:type owl:Class ;
   rdfs:label "InformationStatus" ;
   rdfs:subClassOf owl:Thing ;
+.
+:hasInformationObject
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationDelivery ;
+  rdfs:range :InformationObject ;
+  owl:inverseOf :isInformationObjectOf ;
+.
+:hasInformationRequirement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationDelivery ;
+  rdfs:range :InformationRequirement ;
+  owl:inverseOf :isInformationRequirementOf ;
+.
+:hasStatus
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationObject ;
+  rdfs:label "has status" ;
+  rdfs:range :InformationStatus ;
+  owl:inverseOf :isStatusOf ;
+  skos:prefLabel "has status" ;
+.
+:isInformationObjectOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationObject ;
+  rdfs:range :InformationDelivery ;
+  owl:inverseOf :hasInformationObject ;
+.
+:isInformationRequirementOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationRequirement ;
+  rdfs:label "is information requirement of" ;
+  rdfs:range :InformationDelivery ;
+  owl:inverseOf :hasInformationRequirement ;
+  skos:prefLabel "is information requirement of" ;
+.
+:isStatusOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationStatus ;
+  rdfs:label "is status of" ;
+  rdfs:range :InformationObject ;
+  owl:inverseOf :hasStatus ;
+  skos:prefLabel "is status of" ;
 .
