@@ -2,12 +2,14 @@
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://www.reiter.at/ontology/bpmn2.0
+# imports: http://www.w3.org/ns/prov-o#
 
 @prefix : <http://www.inf.bi.rub.de/semweb/ns/information-delivery-process-ontology/idpo#> .
-@prefix bpmn2: <http://www.reiter.at/ontology/bpmn2.0> .
+@prefix bpmn2: <http://www.reiter.at/ontology/bpmn2.0#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -24,19 +26,28 @@
   owl:imports dc: ;
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.reiter.at/ontology/bpmn2.0> ;
+  owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 :InformationDelivery
   rdf:type owl:Class ;
   rdfs:label "InformationDelivery" ;
-  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#Task> ;
+  rdfs:subClassOf bpmn2:Task ;
   rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf prov:Activity ;
+.
+:InformationDeliverySpecification
+  rdf:type owl:Class ;
+  rdfs:label "Information delivery specification" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Information delivery specification" ;
 .
 :InformationObject
   rdf:type owl:Class ;
   rdfs:label "InformationObject" ;
-  rdfs:subClassOf <http://www.reiter.at/ontology/bpmn2.0#DataObject> ;
+  rdfs:subClassOf bpmn2:DataObject ;
   rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf prov:Entity ;
 .
 :InformationRequirement
   rdf:type owl:Class ;
@@ -48,45 +59,90 @@
   rdfs:label "InformationStatus" ;
   rdfs:subClassOf owl:Thing ;
 .
-:hasInformationObject
+:Project
+  rdf:type owl:Class ;
+  rdfs:label "Project" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Project" ;
+.
+:deliverySpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationDeliverySpecification ;
+  rdfs:label "delivery specification" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:prefLabel "delivery specification" ;
+.
+:generatedByDelivery
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationObject ;
+  rdfs:range :InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:wasGeneratedBy ;
+  owl:inverseOf :generatesObject ;
+.
+:generatesObject
   rdf:type owl:ObjectProperty ;
   rdfs:domain :InformationDelivery ;
   rdfs:range :InformationObject ;
-  owl:inverseOf :isInformationObjectOf ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:generated ;
+  owl:inverseOf :generatedByDelivery ;
 .
-:hasInformationRequirement
+:hasData
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationObject ;
+  rdfs:label "has data" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:atLocation ;
+  skos:prefLabel "has data" ;
+.
+:hasRequirement
   rdf:type owl:ObjectProperty ;
   rdfs:domain :InformationDelivery ;
   rdfs:range :InformationRequirement ;
-  owl:inverseOf :isInformationRequirementOf ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf :isRequirementOf ;
+.
+:hasSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationObject ;
+  rdfs:range :InformationDeliverySpecification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf :isSpecificationOf ;
 .
 :hasStatus
   rdf:type owl:ObjectProperty ;
   rdfs:domain :InformationObject ;
   rdfs:label "has status" ;
   rdfs:range :InformationStatus ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf :isStatusOf ;
   skos:prefLabel "has status" ;
 .
-:isInformationObjectOf
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain :InformationObject ;
-  rdfs:range :InformationDelivery ;
-  owl:inverseOf :hasInformationObject ;
-.
-:isInformationRequirementOf
+:isRequirementOf
   rdf:type owl:ObjectProperty ;
   rdfs:domain :InformationRequirement ;
   rdfs:label "is information requirement of" ;
   rdfs:range :InformationDelivery ;
-  owl:inverseOf :hasInformationRequirement ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf :hasRequirement ;
   skos:prefLabel "is information requirement of" ;
+.
+:isSpecificationOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :InformationDeliverySpecification ;
+  rdfs:label "is delivery specification of" ;
+  rdfs:range :InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf :hasSpecification ;
+  skos:prefLabel "is delivery specification of" ;
 .
 :isStatusOf
   rdf:type owl:ObjectProperty ;
   rdfs:domain :InformationStatus ;
   rdfs:label "is status of" ;
   rdfs:range :InformationObject ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf :hasStatus ;
   skos:prefLabel "is status of" ;
 .
