@@ -1,0 +1,233 @@
+# baseURI: https://icdd.vm.rub.de/ontology/idpo
+# imports: http://www.w3.org/ns/prov-o#
+# prefix: idpo
+
+@prefix bpmn2: <http://www.reiter.at/ontology/bpmn2.0#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix idpo: <https://icdd.vm.rub.de/ontology/idpo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://icdd.vm.rub.de/ontology/idpo>
+  rdf:type owl:Ontology ;
+  dc:creator [
+      rdf:type foaf:Person ;
+      foaf:name "Philipp Hagedorn, Ruhr-University Bochum" ;
+    ] ;
+  dc:description "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology." ;
+  dc:publisher "Chair of Computing in Engineering, Ruhr-University Bochum" ;
+  dc:source "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" ;
+  dc:title "Information Delivery Processes Ontology (IDPO)" ;
+  dcterms:created "2020-03-30"^^xsd:date ;
+  dcterms:license "https://creativecommons.org/licenses/by-sa/4.0/" ;
+  owl:imports <http://www.w3.org/ns/prov-o#> ;
+  owl:versionInfo "v0.1" ;
+.
+idpo:Information
+  rdf:type owl:Class ;
+  rdfs:label "Information" ;
+  rdfs:seeAlso bpmn2:DataObject ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf prov:Entity ;
+.
+idpo:InformationDelivery
+  rdf:type owl:Class ;
+  rdfs:label "InformationDelivery" ;
+  rdfs:seeAlso bpmn2:Task ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf prov:Activity ;
+.
+idpo:InformationDeliverySpecification
+  rdf:type owl:Class ;
+  rdfs:label "InformationDeliverySpecification" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "InformationDeliverySpecification" ;
+.
+idpo:InformationRequirement
+  rdf:type owl:Class ;
+  rdfs:label "InformationRequirement" ;
+  rdfs:subClassOf owl:Thing ;
+.
+idpo:InformationStatus
+  rdf:type owl:Class ;
+  rdfs:label "InformationStatus" ;
+  rdfs:subClassOf owl:Thing ;
+.
+idpo:InformationUsage
+  rdf:type owl:Class ;
+  rdfs:label "InformationUsage" ;
+  rdfs:seeAlso bpmn2:Task ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf prov:Activity ;
+.
+idpo:Project
+  rdf:type owl:Class ;
+  rdfs:label "Project" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Project" ;
+.
+idpo:belongsTo
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationUsage ;
+  rdfs:label "Represents the usage of an InformationDelivery" ;
+  rdfs:range idpo:Project ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasInformationUsage ;
+  owl:propertyDisjointWith idpo:deliversFor ;
+.
+idpo:deliversFor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationDelivery ;
+  rdfs:label "deliversFor" ;
+  rdfs:range idpo:Project ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasInformationDelivery ;
+  owl:propertyDisjointWith idpo:belongsTo ;
+.
+idpo:deliverySpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationDeliverySpecification ;
+  rdfs:label "deliverySpecification" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+idpo:generatesInformation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationDelivery ;
+  rdfs:label "generatesInformation" ;
+  rdfs:range idpo:Information ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:generated ;
+  owl:inverseOf idpo:isGeneratedBy ;
+  owl:propertyDisjointWith idpo:usesInformation ;
+.
+idpo:hasData
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Information ;
+  rdfs:label "has data" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+idpo:hasInformationDelivery
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Project ;
+  rdfs:label "has nformation delivery" ;
+  rdfs:range idpo:InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:deliversFor ;
+  owl:propertyDisjointWith idpo:hasInformationUsage ;
+  skos:prefLabel "has information delivery" ;
+.
+idpo:hasInformationUsage
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Project ;
+  rdfs:label "hasInformationUsage" ;
+  rdfs:range idpo:InformationUsage ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:belongsTo ;
+  owl:propertyDisjointWith idpo:hasInformationDelivery ;
+  skos:prefLabel "hasInformationUsage" ;
+.
+idpo:hasMember
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Project ;
+  rdfs:label "has Member" ;
+  rdfs:range prov:Person ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:isMemberOf ;
+  skos:prefLabel "has Member" ;
+.
+idpo:hasRequirement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationDelivery ;
+  rdfs:label "has requirement" ;
+  rdfs:range idpo:InformationRequirement ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:isRequirementOf ;
+.
+idpo:hasSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Information ;
+  rdfs:label "has specification" ;
+  rdfs:range idpo:InformationDeliverySpecification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:isSpecificationOf ;
+.
+idpo:hasStatus
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Information ;
+  rdfs:label "has status" ;
+  rdfs:range idpo:InformationStatus ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:isStatusOf ;
+  skos:prefLabel "has status" ;
+.
+idpo:isGeneratedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Information ;
+  rdfs:label "is generated by" ;
+  rdfs:range idpo:InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:wasGeneratedBy ;
+  owl:inverseOf idpo:generatesInformation ;
+.
+idpo:isMemberOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain prov:Person ;
+  rdfs:label "is member of" ;
+  rdfs:range idpo:Project ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasMember ;
+  skos:prefLabel "is member of" ;
+.
+idpo:isRequirementOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationRequirement ;
+  rdfs:label "is information requirement of" ;
+  rdfs:range idpo:InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasRequirement ;
+  skos:prefLabel "is information requirement of" ;
+.
+idpo:isSpecificationOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationDeliverySpecification ;
+  rdfs:label "is delivery specification of" ;
+  rdfs:range idpo:InformationDelivery ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasSpecification ;
+  skos:prefLabel "is delivery specification of" ;
+.
+idpo:isStatusOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationStatus ;
+  rdfs:label "is status of" ;
+  rdfs:range idpo:Information ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:hasStatus ;
+  skos:prefLabel "is status of" ;
+.
+idpo:isUsedBy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:Information ;
+  rdfs:label "Represents the usage of an Information" ;
+  rdfs:range idpo:InformationUsage ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf idpo:usesInformation ;
+  owl:propertyDisjointWith idpo:generatesInformation ;
+.
+idpo:usesInformation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationUsage ;
+  rdfs:label "usesInformation" ;
+  rdfs:range idpo:Information ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf prov:used ;
+  owl:inverseOf idpo:isUsedBy ;
+  owl:propertyDisjointWith idpo:generatesInformation ;
+.
+

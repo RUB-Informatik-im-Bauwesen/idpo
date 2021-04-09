@@ -1,0 +1,297 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b1",
+    "@type" : "foaf:Person",
+    "name" : "Philipp Hagedorn, Ruhr-University Bochum"
+  }, {
+    "@id" : "https://icdd.vm.rub.de/ontology/idpo",
+    "@type" : "owl:Ontology",
+    "creator" : "_:b1",
+    "description" : "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology.",
+    "publisher" : "Chair of Computing in Engineering, Ruhr-University Bochum",
+    "source" : "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/",
+    "title" : "Information Delivery Processes Ontology (IDPO)",
+    "created" : "2020-03-30",
+    "license" : "https://creativecommons.org/licenses/by-sa/4.0/",
+    "imports" : "http://www.w3.org/ns/prov-o#",
+    "versionInfo" : "v0.1"
+  }, {
+    "@id" : "idpo:Information",
+    "@type" : "owl:Class",
+    "label" : "Information",
+    "seeAlso" : "bpmn2:DataObject",
+    "subClassOf" : [ "owl:Thing", "prov:Entity" ]
+  }, {
+    "@id" : "idpo:InformationDelivery",
+    "@type" : "owl:Class",
+    "label" : "InformationDelivery",
+    "seeAlso" : "bpmn2:Task",
+    "subClassOf" : [ "owl:Thing", "prov:Activity" ]
+  }, {
+    "@id" : "idpo:InformationDeliverySpecification",
+    "@type" : "owl:Class",
+    "label" : "InformationDeliverySpecification",
+    "subClassOf" : "owl:Thing",
+    "prefLabel" : "InformationDeliverySpecification"
+  }, {
+    "@id" : "idpo:InformationRequirement",
+    "@type" : "owl:Class",
+    "label" : "InformationRequirement",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "idpo:InformationStatus",
+    "@type" : "owl:Class",
+    "label" : "InformationStatus",
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "idpo:InformationUsage",
+    "@type" : "owl:Class",
+    "label" : "InformationUsage",
+    "seeAlso" : "bpmn2:Task",
+    "subClassOf" : [ "owl:Thing", "prov:Activity" ]
+  }, {
+    "@id" : "idpo:Project",
+    "@type" : "owl:Class",
+    "label" : "Project",
+    "subClassOf" : "owl:Thing",
+    "prefLabel" : "Project"
+  }, {
+    "@id" : "idpo:belongsTo",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationUsage",
+    "label" : "Represents the usage of an InformationDelivery",
+    "range" : "idpo:Project",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasInformationUsage",
+    "propertyDisjointWith" : "idpo:deliversFor"
+  }, {
+    "@id" : "idpo:deliversFor",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationDelivery",
+    "label" : "deliversFor",
+    "range" : "idpo:Project",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasInformationDelivery",
+    "propertyDisjointWith" : "idpo:belongsTo"
+  }, {
+    "@id" : "idpo:deliverySpecification",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationDeliverySpecification",
+    "label" : "deliverySpecification",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "idpo:generatesInformation",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationDelivery",
+    "label" : "generatesInformation",
+    "range" : "idpo:Information",
+    "subPropertyOf" : [ "prov:generated", "owl:topObjectProperty" ],
+    "inverseOf" : "idpo:isGeneratedBy",
+    "propertyDisjointWith" : "idpo:usesInformation"
+  }, {
+    "@id" : "idpo:hasData",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Information",
+    "label" : "has data",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "idpo:hasInformationDelivery",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Project",
+    "label" : "has nformation delivery",
+    "range" : "idpo:InformationDelivery",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:deliversFor",
+    "propertyDisjointWith" : "idpo:hasInformationUsage",
+    "prefLabel" : "has information delivery"
+  }, {
+    "@id" : "idpo:hasInformationUsage",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Project",
+    "label" : "hasInformationUsage",
+    "range" : "idpo:InformationUsage",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:belongsTo",
+    "propertyDisjointWith" : "idpo:hasInformationDelivery",
+    "prefLabel" : "hasInformationUsage"
+  }, {
+    "@id" : "idpo:hasMember",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Project",
+    "label" : "has Member",
+    "range" : "prov:Person",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:isMemberOf",
+    "prefLabel" : "has Member"
+  }, {
+    "@id" : "idpo:hasRequirement",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationDelivery",
+    "label" : "has requirement",
+    "range" : "idpo:InformationRequirement",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:isRequirementOf"
+  }, {
+    "@id" : "idpo:hasSpecification",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Information",
+    "label" : "has specification",
+    "range" : "idpo:InformationDeliverySpecification",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:isSpecificationOf"
+  }, {
+    "@id" : "idpo:hasStatus",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Information",
+    "label" : "has status",
+    "range" : "idpo:InformationStatus",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:isStatusOf",
+    "prefLabel" : "has status"
+  }, {
+    "@id" : "idpo:isGeneratedBy",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Information",
+    "label" : "is generated by",
+    "range" : "idpo:InformationDelivery",
+    "subPropertyOf" : [ "prov:wasGeneratedBy", "owl:topObjectProperty" ],
+    "inverseOf" : "idpo:generatesInformation"
+  }, {
+    "@id" : "idpo:isMemberOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "prov:Person",
+    "label" : "is member of",
+    "range" : "idpo:Project",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasMember",
+    "prefLabel" : "is member of"
+  }, {
+    "@id" : "idpo:isRequirementOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationRequirement",
+    "label" : "is information requirement of",
+    "range" : "idpo:InformationDelivery",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasRequirement",
+    "prefLabel" : "is information requirement of"
+  }, {
+    "@id" : "idpo:isSpecificationOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationDeliverySpecification",
+    "label" : "is delivery specification of",
+    "range" : "idpo:InformationDelivery",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasSpecification",
+    "prefLabel" : "is delivery specification of"
+  }, {
+    "@id" : "idpo:isStatusOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationStatus",
+    "label" : "is status of",
+    "range" : "idpo:Information",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:hasStatus",
+    "prefLabel" : "is status of"
+  }, {
+    "@id" : "idpo:isUsedBy",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:Information",
+    "label" : "Represents the usage of an Information",
+    "range" : "idpo:InformationUsage",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "inverseOf" : "idpo:usesInformation",
+    "propertyDisjointWith" : "idpo:generatesInformation"
+  }, {
+    "@id" : "idpo:usesInformation",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "idpo:InformationUsage",
+    "label" : "usesInformation",
+    "range" : "idpo:Information",
+    "subPropertyOf" : [ "prov:used", "owl:topObjectProperty" ],
+    "inverseOf" : "idpo:isUsedBy",
+    "propertyDisjointWith" : "idpo:generatesInformation"
+  } ],
+  "@context" : {
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "mbox" : {
+      "@id" : "http://xmlns.com/foaf/0.1/mbox"
+    },
+    "propertyDisjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#propertyDisjointWith",
+      "@type" : "@id"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/elements/1.1/publisher"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/elements/1.1/source"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator",
+      "@type" : "@id"
+    },
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "bpmn2" : "http://www.reiter.at/ontology/bpmn2.0#",
+    "idpo" : "https://icdd.vm.rub.de/ontology/idpo#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "dc" : "http://purl.org/dc/elements/1.1/"
+  }
+}
