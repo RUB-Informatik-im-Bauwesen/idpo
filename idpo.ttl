@@ -96,6 +96,13 @@ idpo:deliverySpecification
   rdfs:label "deliverySpecification" ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
+idpo:dueDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain idpo:InformationRequirement ;
+  rdfs:label "due date" ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 idpo:generatesInformation
   rdf:type owl:ObjectProperty ;
   rdfs:domain idpo:InformationDelivery ;
@@ -220,6 +227,33 @@ idpo:isUsedBy
   owl:inverseOf idpo:usesInformation ;
   owl:propertyDisjointWith idpo:generatesInformation ;
 .
+idpo:priority
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain idpo:InformationRequirement ;
+  rdfs:label "priority" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+idpo:status
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain idpo:InformationStatus ;
+  rdfs:label "status" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+idpo:statusSystem
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain idpo:InformationStatus ;
+  rdfs:label "status system" ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+idpo:suitability
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain idpo:InformationRequirement ;
+  rdfs:label "suitablity" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 idpo:usesInformation
   rdf:type owl:ObjectProperty ;
   rdfs:domain idpo:InformationUsage ;
@@ -230,4 +264,3 @@ idpo:usesInformation
   owl:inverseOf idpo:isUsedBy ;
   owl:propertyDisjointWith idpo:generatesInformation ;
 .
-
