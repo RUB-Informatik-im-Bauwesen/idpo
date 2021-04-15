@@ -190,7 +190,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology.</p>"
+        "@value": "<p>The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology. It provides SHACL templates for validating information requirements and delivery specifications.</p>"
       }
     ],
     "https://schema.org/license": [
@@ -234,15 +234,18 @@
         <dt>Imports</dt>
         <dd>
             <a href="http://www.w3.org/ns/prov-o#">http://www.w3.org/ns/prov-o#</a><br/>
+            <a href="http://www.w3.org/ns/shacl#">sh:</a><br/>
         </dd>
         <dt>License</dt>
         <dd><a href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></dd>
+        <dt>Source</dt>
+        <dd><a href="https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/">https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/</a></dd>
         <dt>Ontology RDF</dt>
         <dd><a href="idpo.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology.</p>
+        <p>The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology. It provides SHACL templates for validating information requirements and delivery specifications.</p>
     </div>
 </section>
 <section id="toc">
@@ -250,6 +253,7 @@
     <ol>
         <li><a href="#classes">Classes</a></li>
         <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
@@ -291,17 +295,20 @@
                 <td>
                     <a href="#hasspecification">idpo:hasSpecification</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#RepresentstheusageofanInformation">idpo:isUsedBy</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isgeneratedby">idpo:isGeneratedBy</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasdata">idpo:hasData</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasstatus">idpo:hasStatus</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isgeneratedby">idpo:isGeneratedBy</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrequirement">idpo:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdata">idpo:hasData</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#isstatusof">idpo:isStatusOf</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#usesInformation">idpo:usesInformation</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#generatesInformation">idpo:generatesInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isinformationrequirementof">idpo:isRequirementOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#usesInformation">idpo:usesInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isstatusof">idpo:isStatusOf</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -323,7 +330,6 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasrequirement">idpo:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#generatesInformation">idpo:generatesInformation</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#deliversFor">idpo:deliversFor</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
@@ -331,10 +337,8 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasnformationdelivery">idpo:hasInformationDelivery</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isdeliveryspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isgeneratedby">idpo:isGeneratedBy</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isinformationrequirementof">idpo:isRequirementOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasnformationdelivery">idpo:hasInformationDelivery</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -355,8 +359,8 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#isdeliveryspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#deliverySpecification">idpo:deliverySpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -383,7 +387,11 @@
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#priority">idpo:priority</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#duedate">idpo:dueDate</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#isinformationrequirementof">idpo:isRequirementOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Requires">idpo:requires</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#suitablity">idpo:suitability</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -410,7 +418,9 @@
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#statussystem">idpo:statusSystem</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="#isstatusof">idpo:isStatusOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#status">idpo:status</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -445,8 +455,8 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#RepresentstheusageofanInformation">idpo:isUsedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasInformationUsage">idpo:hasInformationUsage</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#RepresentstheusageofanInformation">idpo:isUsedBy</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -468,16 +478,16 @@
                 <th>In domain of</th>
                 <td>
                     <a href="#hasnformationdelivery">idpo:hasInformationDelivery</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasInformationUsage">idpo:hasInformationUsage</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasMember">idpo:hasMember</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasInformationUsage">idpo:hasInformationUsage</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
                     <a href="#RepresentstheusageofanInformationDelivery">idpo:belongsTo</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#deliversFor">idpo:deliversFor</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#ismemberof">idpo:isMemberOf</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#deliversFor">idpo:deliversFor</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -489,6 +499,7 @@
         <li><a href="#RepresentstheusageofanInformationDelivery">Represents the usage of an InformationDelivery</a></li>
         <li><a href="#deliversFor">deliversFor</a></li>
         <li><a href="#deliverySpecification">deliverySpecification</a></li>
+        <li><a href="#derivedfromBPMNobject">derived from BPMN object</a></li>
         <li><a href="#generatesInformation">generatesInformation</a></li>
         <li><a href="#hasdata">has data</a></li>
         <li><a href="#hasnformationdelivery">has nformation delivery</a></li>
@@ -500,9 +511,10 @@
         <li><a href="#isgeneratedby">is generated by</a></li>
         <li><a href="#ismemberof">is member of</a></li>
         <li><a href="#isinformationrequirementof">is information requirement of</a></li>
-        <li><a href="#isdeliveryspecificationof">is delivery specification of</a></li>
+        <li><a href="#isspecificationof">is specification of</a></li>
         <li><a href="#isstatusof">is status of</a></li>
         <li><a href="#RepresentstheusageofanInformation">Represents the usage of an Information</a></li>
+        <li><a href="#Requires">Requires</a></li>
         <li><a href="#usesInformation">usesInformation</a></li>
     </ul>
     <div class="entity property" id="RepresentstheusageofanInformationDelivery">
@@ -590,6 +602,34 @@
                     <a href="#InformationDeliverySpecification">idpo:InformationDeliverySpecification</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/ns/shacl#NodeShape">sh:NodeShape</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="derivedfromBPMNobject">
+        <h3>derived from BPMN object<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Information">idpo:Information</a><sup class="sup-c" title="class">c</sup> or <a href="#InformationUsage">idpo:InformationUsage</a><sup class="sup-c" title="class">c</sup> or <a href="#InformationDelivery">idpo:InformationDelivery</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
         </table>
     </div>
     <div class="entity property" id="generatesInformation">
@@ -602,8 +642,8 @@
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
                     <a href="http://www.w3.org/ns/prov#generated">prov:generated</a>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
                 </td>
             </tr>
             <tr>
@@ -768,7 +808,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#InformationDelivery">idpo:InformationDelivery</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Information">idpo:Information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -795,7 +835,7 @@
             <tr>
                 <th>Inverse properties</th>
                 <td>
-                    <a href="#isdeliveryspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#isspecificationof">idpo:isSpecificationOf</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -855,8 +895,8 @@
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
                     <a href="http://www.w3.org/ns/prov#wasGeneratedBy">prov:wasGeneratedBy</a>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
                 </td>
             </tr>
             <tr>
@@ -940,13 +980,13 @@
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#InformationDelivery">idpo:InformationDelivery</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Information">idpo:Information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity property" id="isdeliveryspecificationof">
-        <h3>is delivery specification of<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="isspecificationof">
+        <h3>is specification of<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -973,7 +1013,7 @@
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#InformationDelivery">idpo:InformationDelivery</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Information">idpo:Information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
@@ -1044,6 +1084,33 @@
             </tr>
         </table>
     </div>
+    <div class="entity property" id="Requires">
+        <h3>Requires<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#requires</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationRequirement">idpo:InformationRequirement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/ns/shacl#Shape">sh:Shape</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="usesInformation">
         <h3>usesInformation<sup title="object property" class="sup-op">op</sup></h3>
         <table>
@@ -1080,6 +1147,146 @@
     </div>
 </section>
 
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#duedate">due date</a></li>
+        <li><a href="#priority">priority</a></li>
+        <li><a href="#status">status</a></li>
+        <li><a href="#statussystem">status system</a></li>
+        <li><a href="#suitablity">suitablity</a></li>
+    </ul>
+    <div class="entity property" id="duedate">
+        <h3>due date<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#dueDate</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationRequirement">idpo:InformationRequirement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="priority">
+        <h3>priority<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#priority</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationRequirement">idpo:InformationRequirement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="status">
+        <h3>status<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#status</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationStatus">idpo:InformationStatus</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="statussystem">
+        <h3>status system<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#statusSystem</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationStatus">idpo:InformationStatus</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="suitablity">
+        <h3>suitablity<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://icdd.vm.rub.de/ontology/idpo#suitability</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#InformationRequirement">idpo:InformationRequirement</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
   
   <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -1093,8 +1300,12 @@
         <dt><em>default (:)</em></dt>
         <dd><code>https://icdd.vm.rub.de/ontology/idpo#</code></dd>
         <dt>bpmn2</dt>
-        <dd><code>http://www.reiter.at/ontology/bpmn2.0#</code></dd>
-        <dt>dc</dt>
+        <dd><code>http://www.omg.org/spec/BPMN/20100524/MODEL#</code></dd>
+        <dt>cc</dt>
+        <dd><code>http://creativecommons.org/ns#</code></dd>
+        <dt>dash</dt>
+        <dd><code>http://datashapes.org/dash#</code></dd>
+        <dt>dce</dt>
         <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
         <dt>dcterms</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
@@ -1102,6 +1313,8 @@
         <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
         <dt>idpo</dt>
         <dd><code>https://icdd.vm.rub.de/ontology/idpo#</code></dd>
+        <dt>list</dt>
+        <dd><code>https://w3id.org/list#</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
         <dt>prov</dt>
@@ -1112,8 +1325,16 @@
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
         <dt>sdo</dt>
         <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
         <dt>skos</dt>
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>swa</dt>
+        <dd><code>http://topbraid.org/swa#</code></dd>
+        <dt>tosh</dt>
+        <dd><code>http://topbraid.org/tosh#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
         <dt>xml</dt>
         <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
         <dt>xsd</dt>

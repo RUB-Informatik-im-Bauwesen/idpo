@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IDPO: Instances</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "http://icdd.vm.rub.de/ontology/idpo/4537_instances",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "IDPO: Instances"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.4</span>
+  </div>
+  <h1>IDPO: Instances</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>IRI</dt>
+        <dd><code>http://icdd.vm.rub.de/ontology/idpo/4537_instances</code></dd>
+        <dt>Version Information</dt>
+        <dd>Instance data for IDPO Ontology</dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="https://icdd.vm.rub.de/ontology/idpo">https://icdd.vm.rub.de/ontology/idpo</a><br/>
+        </dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="instances.ttl">RDF (turtle)</a></dd>
+    </dl>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#namedindividuals">Named Individuals</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#AnyData_1">AnyData_1</a></li>
+        <li><a href="#IfcBuilding_37">IfcBuilding_37</a></li>
+        <li><a href="#IfcSite_38">IfcSite_38</a></li>
+        <li><a href="#InformationDeliverySpecification_1">InformationDeliverySpecification_1</a></li>
+        <li><a href="#InformationDelivery_1">InformationDelivery_1</a></li>
+        <li><a href="#InformationRequirement_1">InformationRequirement_1</a></li>
+        <li><a href="#InformationStatus_1">InformationStatus_1</a></li>
+        <li><a href="#InformationUsage_1">InformationUsage_1</a></li>
+        <li><a href="#Information_1">Information_1</a></li>
+        <li><a href="#NodeShape_Requirement">NodeShape_Requirement</a></li>
+        <li><a href="#NodeShape_Specification">NodeShape_Specification</a></li>
+        <li><a href="#Person_1">Person_1</a></li>
+        <li><a href="#Project_1">Project_1</a></li>
+        <li><a href="#PropertyShape_Requirement_ifcBuilding">PropertyShape_Requirement_ifcBuilding</a></li>
+        <li><a href="#PropertyShape_Requirement_overall">PropertyShape_Requirement_overall</a></li>
+        <li><a href="#PropertyShape_Requirement_rdfsResource">PropertyShape_Requirement_rdfsResource</a></li>
+        <li><a href="#PropertyShape_Specification">PropertyShape_Specification</a></li>
+    </ul>
+    <div class="entity named_individual" id="AnyData_1">
+        <h3>AnyData_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#AnyData_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="InformationDeliverySpecification_1">
+        <h3>InformationDeliverySpecification_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#InformationDeliverySpecification_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification">idpo:InformationDeliverySpecification</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="InformationDelivery_1">
+        <h3>InformationDelivery_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#InformationDelivery_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#InformationDelivery">idpo:InformationDelivery</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="InformationRequirement_1">
+        <h3>InformationRequirement_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#InformationRequirement_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#InformationRequirement">idpo:InformationRequirement</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="InformationStatus_1">
+        <h3>InformationStatus_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#InformationStatus_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#InformationStatus">idpo:InformationStatus</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="InformationUsage_1">
+        <h3>InformationUsage_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#InformationUsage_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#InformationUsage">idpo:InformationUsage</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Information_1">
+        <h3>Information_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#Information_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#Information">idpo:Information</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="NodeShape_Requirement">
+        <h3>NodeShape_Requirement<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#NodeShape_Requirement
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#NodeShape">sh:NodeShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="NodeShape_Specification">
+        <h3>NodeShape_Specification<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#NodeShape_Specification
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#NodeShape">sh:NodeShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Person_1">
+        <h3>Person_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#Person_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/prov#Person">prov:Person</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="Project_1">
+        <h3>Project_1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#Project_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://icdd.vm.rub.de/ontology/idpo#Project">idpo:Project</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="PropertyShape_Requirement_ifcBuilding">
+        <h3>PropertyShape_Requirement_ifcBuilding<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#PropertyShape_Requirement_ifcBuilding
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#PropertyShape">sh:PropertyShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="PropertyShape_Requirement_overall">
+        <h3>PropertyShape_Requirement_overall<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#PropertyShape_Requirement_overall
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#PropertyShape">sh:PropertyShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="PropertyShape_Requirement_rdfsResource">
+        <h3>PropertyShape_Requirement_rdfsResource<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#PropertyShape_Requirement_rdfsResource
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#PropertyShape">sh:PropertyShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="PropertyShape_Specification">
+        <h3>PropertyShape_Specification<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://icdd.vm.rub.de/ontology/idpo/4537_instances#PropertyShape_Specification
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/ns/shacl#PropertyShape">sh:PropertyShape</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="IfcBuilding_37">
+        <h3>IfcBuilding_37<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linkedbuildingdata.net/ifc/resources20201201_150204/IfcBuilding_37
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://ifcowl.openbimstandards.org/IFC2X3_TC1#IfcBuilding">ifcowl:IfcBuilding</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="IfcSite_38">
+        <h3>IfcSite_38<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td>
+                  <code>
+                      http://linkedbuildingdata.net/ifc/resources20201201_150204/IfcSite_38
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://ifcowl.openbimstandards.org/IFC2X3_TC1#IfcSite">ifcowl:IfcSite</a><br/>
+            </dd>
+        </table>
+    </div>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>http://icdd.vm.rub.de/ontology/idpo/4537_instances#</code></dd>
+        <dt>bpmn2</dt>
+        <dd><code>http://www.omg.org/spec/BPMN/20100524/MODEL#</code></dd>
+        <dt>cc</dt>
+        <dd><code>http://creativecommons.org/ns#</code></dd>
+        <dt>dash</dt>
+        <dd><code>http://datashapes.org/dash#</code></dd>
+        <dt>dce</dt>
+        <dd><code>http://purl.org/dc/elements/1.1/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>express</dt>
+        <dd><code>https://w3id.org/express#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>idpo</dt>
+        <dd><code>https://icdd.vm.rub.de/ontology/idpo#</code></dd>
+        <dt>ifc</dt>
+        <dd><code>http://www.buildingsmart-tech.org/ifcOWL/IFC2X3_TC1#</code></dd>
+        <dt>ifch</dt>
+        <dd><code>http://www.openbim.org/ifcowl/ifcheader#</code></dd>
+        <dt>ifcowl</dt>
+        <dd><code>http://ifcowl.openbimstandards.org/IFC2X3_TC1#</code></dd>
+        <dt>inst</dt>
+        <dd><code>http://linkedbuildingdata.net/ifc/resources20201201_150204/</code></dd>
+        <dt>list</dt>
+        <dd><code>https://w3id.org/list#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>swa</dt>
+        <dd><code>http://topbraid.org/swa#</code></dd>
+        <dt>this</dt>
+        <dd><code>http://icdd.vm.rub.de/ontology/idpo/4537_instances#</code></dd>
+        <dt>tosh</dt>
+        <dd><code>http://topbraid.org/tosh#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

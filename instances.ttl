@@ -1,0 +1,155 @@
+# baseURI: http://icdd.vm.rub.de/ontology/idpo/4537_instances
+# imports: https://icdd.vm.rub.de/ontology/idpo
+# prefix: this
+
+@prefix bpmn2: <http://www.omg.org/spec/BPMN/20100524/MODEL#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix expr: <https://w3id.org/express#> .
+@prefix express: <https://w3id.org/express#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix idpo: <https://icdd.vm.rub.de/ontology/idpo#> .
+@prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC2X3_TC1#> .
+@prefix ifch: <http://www.openbim.org/ifcowl/ifcheader#> .
+@prefix ifcowl: <http://ifcowl.openbimstandards.org/IFC2X3_TC1#> .
+@prefix inst: <http://linkedbuildingdata.net/ifc/resources20201201_150204/> .
+@prefix list: <https://w3id.org/list#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix this: <http://icdd.vm.rub.de/ontology/idpo/4537_instances#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://icdd.vm.rub.de/ontology/idpo/4537_instances>
+  rdf:type owl:Ontology ;
+  owl:imports <https://icdd.vm.rub.de/ontology/idpo> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+this:AnyData_1
+  rdf:type rdfs:Resource ;
+.
+this:InformationDeliverySpecification_1
+  rdf:type idpo:InformationDeliverySpecification ;
+  idpo:deliverySpecification this:PropertyShape_Specification ;
+  idpo:isSpecificationOf this:Information_1 ;
+.
+this:InformationDelivery_1
+  rdf:type idpo:InformationDelivery ;
+  idpo:deliversFor this:Project_1 ;
+  idpo:generatesInformation this:Information_1 ;
+.
+this:InformationRequirement_1
+  rdf:type idpo:InformationRequirement ;
+  idpo:requires this:NodeShape_Requirement ;
+.
+this:InformationStatus_1
+  rdf:type idpo:InformationStatus ;
+  idpo:isStatusOf this:Information_1 ;
+  idpo:status "Published" ;
+  idpo:statusSystem "ISO19650" ;
+.
+this:InformationUsage_1
+  rdf:type idpo:InformationUsage ;
+  idpo:belongsTo this:Project_1 ;
+  idpo:usesInformation this:Information_1 ;
+.
+this:Information_1
+  rdf:type idpo:Information ;
+  idpo:hasData this:Project_1 ;
+  idpo:hasData inst:IfcBuilding_37 ;
+  idpo:hasRequirement this:InformationRequirement_1 ;
+  idpo:hasSpecification this:InformationDeliverySpecification_1 ;
+  idpo:hasStatus this:InformationStatus_1 ;
+  idpo:isGeneratedBy this:InformationDelivery_1 ;
+  idpo:isUsedBy this:InformationUsage_1 ;
+.
+this:NodeShape_Requirement
+  rdf:type sh:NodeShape ;
+  sh:property this:PropertyShape_Requirement_ifcBuilding ;
+  sh:property this:PropertyShape_Requirement_overall ;
+  sh:property this:PropertyShape_Requirement_rdfsResource ;
+  sh:targetNode this:Information_1 ;
+.
+this:NodeShape_Specification
+  rdf:type sh:NodeShape ;
+  sh:deactivated "false"^^xsd:boolean ;
+  sh:property this:PropertyShape_Specification ;
+  sh:targetNode this:Information_1 ;
+.
+this:Person_1
+  rdf:type prov:Person ;
+  idpo:isMemberOf this:Project_1 ;
+.
+this:Project_1
+  rdf:type idpo:Project ;
+  idpo:hasInformationDelivery this:InformationDelivery_1 ;
+  idpo:hasInformationUsage this:InformationUsage_1 ;
+  idpo:hasMember this:Person_1 ;
+.
+this:PropertyShape_Requirement_ifcBuilding
+  rdf:type sh:PropertyShape ;
+  sh:path idpo:hasData ;
+  sh:qualifiedMaxCount 1 ;
+  sh:qualifiedMinCount 1 ;
+  sh:qualifiedValueShape [
+      rdf:type sh:NodeShape ;
+      sh:class ifcowl:IfcBuilding ;
+    ] ;
+  sh:qualifiedValueShapesDisjoint "true"^^xsd:boolean ;
+.
+this:PropertyShape_Requirement_overall
+  rdf:type sh:PropertyShape ;
+  sh:path idpo:hasData ;
+  sh:maxCount 2 ;
+.
+this:PropertyShape_Requirement_rdfsResource
+  rdf:type sh:PropertyShape ;
+  sh:path idpo:hasData ;
+  sh:qualifiedMinCount 1 ;
+  sh:qualifiedValueShape [
+      rdf:type sh:NodeShape ;
+      sh:class rdfs:Resource ;
+    ] ;
+  sh:qualifiedValueShapesDisjoint "true"^^xsd:boolean ;
+.
+this:PropertyShape_Specification
+  rdf:type sh:PropertyShape ;
+  sh:path idpo:hasData ;
+  sh:minCount 1 ;
+  sh:qualifiedMinCount 1 ;
+  sh:qualifiedValueShape [
+      rdf:type sh:NodeShape ;
+      sh:property [
+          sh:path rdf:type ;
+          sh:minCount 1 ;
+          sh:value ifc:IfcBuilding ;
+        ] ;
+      sh:property [
+          sh:path ifcowl:objectPlacement_IfcProduct ;
+          sh:qualifiedMinCount 1 ;
+          sh:qualifiedValueShape [
+              sh:property [
+                  sh:path rdf:type ;
+                  sh:maxCount 1 ;
+                  sh:minCount 1 ;
+                  sh:value ifc:IfcLocalPlacement ;
+                ] ;
+            ] ;
+        ] ;
+    ] ;
+.
+inst:IfcBuilding_37
+  rdf:type ifcowl:IfcBuilding ;
+  ifcowl:objectPlacement_IfcProduct inst:IfcLocalPlacement_25 ;
+.
+inst:IfcSite_38
+  rdf:type ifcowl:IfcSite ;
+.

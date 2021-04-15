@@ -1,34 +1,51 @@
 # baseURI: https://icdd.vm.rub.de/ontology/idpo
+# imports: http://topbraid.org/tosh
 # imports: http://www.w3.org/ns/prov-o#
+# imports: http://www.w3.org/ns/shacl#
 # prefix: idpo
 
-@prefix bpmn2: <http://www.reiter.at/ontology/bpmn2.0#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bpmn2: <http://www.omg.org/spec/BPMN/20100524/MODEL#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix idpo: <https://icdd.vm.rub.de/ontology/idpo#> .
+@prefix list: <https://w3id.org/list#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+bpmn2:PrefixDeclaration
+  rdf:type sh:PrefixDeclaration ;
+  sh:namespace "http://www.omg.org/spec/BPMN/20100524/MODEL#"^^xsd:anyURI ;
+  sh:prefix "bpmn2" ;
+.
 <https://icdd.vm.rub.de/ontology/idpo>
   rdf:type owl:Ontology ;
-  dc:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Philipp Hagedorn, Ruhr-University Bochum" ;
-    ] ;
-  dc:description "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology." ;
-  dc:publisher "Chair of Computing in Engineering, Ruhr-University Bochum" ;
-  dc:source "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" ;
-  dc:title "Information Delivery Processes Ontology (IDPO)" ;
+  dcterms:description "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology. It provides SHACL templates for validating information requirements and delivery specifications." ;
+  dcterms:publisher "Chair of Computing in Engineering, Ruhr-University Bochum" ;
+  dcterms:source "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" ;
+  dcterms:title "Information Delivery Processes Ontology (IDPO)" ;
   dcterms:created "2020-03-30"^^xsd:date ;
   dcterms:license "https://creativecommons.org/licenses/by-sa/4.0/" ;
   owl:imports <http://www.w3.org/ns/prov-o#> ;
+  owl:imports sh: ;
   owl:versionInfo "v0.1" ;
-.
+  sh:declare bpmn2:PrefixDeclaration ;
+  sh:declare idpo:PrefixDeclaration ;
+  dcterms:creator [
+  rdf:type foaf:Person ;
+  foaf:name "Philipp Hagedorn, Ruhr-University Bochum" ;
+].
+
 idpo:Information
   rdf:type owl:Class ;
   rdfs:label "Information" ;
@@ -66,6 +83,11 @@ idpo:InformationUsage
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf prov:Activity ;
 .
+idpo:PrefixDeclaration
+  rdf:type sh:PrefixDeclaration ;
+  sh:namespace "https://icdd.vm.rub.de/ontology/idpo#"^^xsd:anyURI ;
+  sh:prefix "idpo" ;
+.
 idpo:Project
   rdf:type owl:Class ;
   rdfs:label "Project" ;
@@ -94,6 +116,26 @@ idpo:deliverySpecification
   rdf:type owl:ObjectProperty ;
   rdfs:domain idpo:InformationDeliverySpecification ;
   rdfs:label "deliverySpecification" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          sh:NodeShape
+          rdfs:Resource
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+idpo:derivedFromBPMN
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          idpo:Information
+          idpo:InformationUsage
+          idpo:InformationDelivery
+        ) ;
+    ] ;
+  rdfs:label "derived from BPMN object" ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:dueDate
@@ -150,7 +192,7 @@ idpo:hasMember
 .
 idpo:hasRequirement
   rdf:type owl:ObjectProperty ;
-  rdfs:domain idpo:InformationDelivery ;
+  rdfs:domain idpo:Information ;
   rdfs:label "has requirement" ;
   rdfs:range idpo:InformationRequirement ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -195,7 +237,7 @@ idpo:isRequirementOf
   rdf:type owl:ObjectProperty ;
   rdfs:domain idpo:InformationRequirement ;
   rdfs:label "is information requirement of" ;
-  rdfs:range idpo:InformationDelivery ;
+  rdfs:range idpo:Information ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:hasRequirement ;
   skos:prefLabel "is information requirement of" ;
@@ -203,11 +245,11 @@ idpo:isRequirementOf
 idpo:isSpecificationOf
   rdf:type owl:ObjectProperty ;
   rdfs:domain idpo:InformationDeliverySpecification ;
-  rdfs:label "is delivery specification of" ;
-  rdfs:range idpo:InformationDelivery ;
+  rdfs:label "is specification of" ;
+  rdfs:range idpo:Information ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:hasSpecification ;
-  skos:prefLabel "is delivery specification of" ;
+  skos:prefLabel "is  specification of" ;
 .
 idpo:isStatusOf
   rdf:type owl:ObjectProperty ;
@@ -233,6 +275,13 @@ idpo:priority
   rdfs:label "priority" ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
+.
+idpo:requires
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain idpo:InformationRequirement ;
+  rdfs:label "Requires" ;
+  rdfs:range sh:Shape ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:status
   rdf:type owl:DatatypeProperty ;
@@ -264,3 +313,4 @@ idpo:usesInformation
   owl:inverseOf idpo:isUsedBy ;
   owl:propertyDisjointWith idpo:generatesInformation ;
 .
+

@@ -1,14 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:idpo="https://icdd.vm.rub.de/ontology/idpo#"
+    xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL#"
+    xmlns:list="https://w3id.org/list#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:tosh="http://topbraid.org/tosh#"
+    xmlns:dce="http://purl.org/dc/elements/1.1/"
     xmlns:dcterms="http://purl.org/dc/terms/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:swa="http://topbraid.org/swa#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:prov="http://www.w3.org/ns/prov#"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-    xmlns:idpo="https://icdd.vm.rub.de/ontology/idpo#"
-    xmlns:bpmn2="http://www.reiter.at/ontology/bpmn2.0#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sh="http://www.w3.org/ns/shacl#"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:dash="http://datashapes.org/dash#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xml:base="https://icdd.vm.rub.de/ontology/idpo" > 
@@ -27,21 +34,21 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#isStatusOf">
-    <rdfs:range rdf:resource="#Information"/>
+    <skos:prefLabel>is status of</skos:prefLabel>
     <owl:inverseOf rdf:resource="#hasStatus"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <skos:prefLabel>is status of</skos:prefLabel>
+    <rdfs:range rdf:resource="#Information"/>
     <rdfs:label>is status of</rdfs:label>
     <rdfs:domain rdf:resource="#InformationStatus"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasStatus">
-    <rdfs:domain rdf:resource="#Information"/>
+    <skos:prefLabel>has status</skos:prefLabel>
     <owl:inverseOf rdf:resource="#isStatusOf"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#InformationStatus"/>
     <rdfs:label>has status</rdfs:label>
-    <skos:prefLabel>has status</skos:prefLabel>
+    <rdfs:domain rdf:resource="#Information"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasData">
@@ -54,35 +61,44 @@
     <skos:prefLabel>is information requirement of</skos:prefLabel>
     <owl:inverseOf rdf:resource="#hasRequirement"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:range rdf:resource="#InformationDelivery"/>
+    <rdfs:range rdf:resource="#Information"/>
     <rdfs:label>is information requirement of</rdfs:label>
     <rdfs:domain rdf:resource="#InformationRequirement"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="">
+    <sh:declare rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration"/>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-30</dcterms:created>
     <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/shacl#"/>
     <dcterms:license>https://creativecommons.org/licenses/by-sa/4.0/</dcterms:license>
-    <dc:publisher>Chair of Computing in Engineering, Ruhr-University Bochum</dc:publisher>
+    <dce:publisher>Chair of Computing in Engineering, Ruhr-University Bochum</dce:publisher>
+    <owl:imports rdf:resource="http://topbraid.org/tosh"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dc:description>The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology.</dc:description>
     <owl:versionInfo>v0.1</owl:versionInfo>
-    <dc:title>Information Delivery Processes Ontology (IDPO)</dc:title>
-    <dc:source>https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/</dc:source>
-    <dc:creator rdf:nodeID="A1"/>
+    <dce:source>https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/</dce:source>
+    <sh:declare rdf:resource="#PrefixDeclaration"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <foaf:name>Philipp Hagedorn, Ruhr-University Bochum</foaf:name>
-    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  <rdf:Description rdf:nodeID="A0">
+    <owl:unionOf rdf:nodeID="A1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:rest rdf:nodeID="A3"/>
+    <rdf:first rdf:resource="#InformationUsage"/>
   </rdf:Description>
   <rdf:Description rdf:about="#deliversFor">
+    <owl:propertyDisjointWith rdf:resource="#belongsTo"/>
+    <owl:inverseOf rdf:resource="#hasInformationDelivery"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#Project"/>
     <rdfs:label>deliversFor</rdfs:label>
     <rdfs:domain rdf:resource="#InformationDelivery"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="#Project"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:inverseOf rdf:resource="#hasInformationDelivery"/>
-    <owl:propertyDisjointWith rdf:resource="#belongsTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="#InformationDelivery"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Project">
     <skos:prefLabel>Project</skos:prefLabel>
@@ -90,40 +106,57 @@
     <rdfs:label>Project</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dueDate">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>due date</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationRequirement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#isMemberOf">
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <skos:prefLabel>is member of</skos:prefLabel>
     <owl:inverseOf rdf:resource="#hasMember"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#Project"/>
     <rdfs:label>is member of</rdfs:label>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasInformationUsage">
-    <owl:inverseOf rdf:resource="#belongsTo"/>
-    <rdfs:range rdf:resource="#InformationUsage"/>
-    <owl:propertyDisjointWith rdf:resource="#hasInformationDelivery"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:label>hasInformationUsage</rdfs:label>
     <skos:prefLabel>hasInformationUsage</skos:prefLabel>
+    <owl:propertyDisjointWith rdf:resource="#hasInformationDelivery"/>
+    <owl:inverseOf rdf:resource="#belongsTo"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#InformationUsage"/>
+    <rdfs:label>hasInformationUsage</rdfs:label>
     <rdfs:domain rdf:resource="#Project"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#status">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>status</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#InformationUsage">
-    <rdfs:seeAlso rdf:resource="http://www.reiter.at/ontology/bpmn2.0#Task"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:seeAlso rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#Task"/>
     <rdfs:label>InformationUsage</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#belongsTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:label>Represents the usage of an InformationDelivery</rdfs:label>
-    <rdfs:range rdf:resource="#Project"/>
-    <owl:inverseOf rdf:resource="#hasInformationUsage"/>
-    <owl:propertyDisjointWith rdf:resource="#deliversFor"/>
-    <rdfs:domain rdf:resource="#InformationUsage"/>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:nodeID="A2"/>
+    <rdf:first rdf:resource="#Information"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <foaf:name>Philipp Hagedorn, Ruhr-University Bochum</foaf:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
   </rdf:Description>
   <rdf:Description rdf:about="#InformationDeliverySpecification">
     <skos:prefLabel>InformationDeliverySpecification</skos:prefLabel>
@@ -131,18 +164,33 @@
     <rdfs:label>InformationDeliverySpecification</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#PrefixDeclaration">
+    <sh:prefix>idpo</sh:prefix>
+    <sh:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://icdd.vm.rub.de/ontology/idpo#</sh:namespace>
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PrefixDeclaration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#belongsTo">
+    <owl:propertyDisjointWith rdf:resource="#deliversFor"/>
+    <owl:inverseOf rdf:resource="#hasInformationUsage"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#Project"/>
+    <rdfs:label>Represents the usage of an InformationDelivery</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationUsage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#isSpecificationOf">
-    <skos:prefLabel>is delivery specification of</skos:prefLabel>
+    <skos:prefLabel>is  specification of</skos:prefLabel>
     <owl:inverseOf rdf:resource="#hasSpecification"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:range rdf:resource="#InformationDelivery"/>
-    <rdfs:label>is delivery specification of</rdfs:label>
+    <rdfs:range rdf:resource="#Information"/>
+    <rdfs:label>is specification of</rdfs:label>
     <rdfs:domain rdf:resource="#InformationDeliverySpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#deliverySpecification">
-    <rdfs:label>deliverySpecification</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:nodeID="A7"/>
+    <rdfs:label>deliverySpecification</rdfs:label>
     <rdfs:domain rdf:resource="#InformationDeliverySpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
@@ -151,31 +199,41 @@
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#InformationRequirement"/>
     <rdfs:label>has requirement</rdfs:label>
-    <rdfs:domain rdf:resource="#InformationDelivery"/>
+    <rdfs:domain rdf:resource="#Information"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Information">
-    <rdfs:seeAlso rdf:resource="http://www.reiter.at/ontology/bpmn2.0#DataObject"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Information</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:seeAlso rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#DataObject"/>
+    <rdfs:label>Information</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#InformationDelivery">
-    <rdfs:seeAlso rdf:resource="http://www.reiter.at/ontology/bpmn2.0#Task"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:seeAlso rdf:resource="http://www.omg.org/spec/BPMN/20100524/MODEL#Task"/>
     <rdfs:label>InformationDelivery</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasInformationDelivery">
-    <owl:inverseOf rdf:resource="#deliversFor"/>
     <skos:prefLabel>has information delivery</skos:prefLabel>
     <owl:propertyDisjointWith rdf:resource="#hasInformationUsage"/>
+    <owl:inverseOf rdf:resource="#deliversFor"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#InformationDelivery"/>
     <rdfs:label>has nformation delivery</rdfs:label>
     <rdfs:domain rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#generatesInformation">
+    <owl:propertyDisjointWith rdf:resource="#usesInformation"/>
+    <owl:inverseOf rdf:resource="#isGeneratedBy"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#Information"/>
+    <rdfs:label>generatesInformation</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationDelivery"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#InformationRequirement">
@@ -183,51 +241,87 @@
     <rdfs:label>InformationRequirement</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#generatesInformation">
-    <owl:inverseOf rdf:resource="#isGeneratedBy"/>
-    <owl:propertyDisjointWith rdf:resource="#usesInformation"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:label>generatesInformation</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="#InformationDelivery"/>
-    <rdfs:range rdf:resource="#Information"/>
+  <rdf:Description rdf:about="#suitability">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>suitablity</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationRequirement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#isGeneratedBy">
-    <rdfs:domain rdf:resource="#Information"/>
+    <owl:inverseOf rdf:resource="#generatesInformation"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#InformationDelivery"/>
     <rdfs:label>is generated by</rdfs:label>
-    <owl:inverseOf rdf:resource="#generatesInformation"/>
+    <rdfs:domain rdf:resource="#Information"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:unionOf rdf:nodeID="A4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#usesInformation">
+    <owl:propertyDisjointWith rdf:resource="#generatesInformation"/>
     <owl:inverseOf rdf:resource="#isUsedBy"/>
-    <rdfs:label>usesInformation</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <owl:propertyDisjointWith rdf:resource="#generatesInformation"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="#InformationUsage"/>
     <rdfs:range rdf:resource="#Information"/>
+    <rdfs:label>usesInformation</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationUsage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#requires">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/shacl#Shape"/>
+    <rdfs:label>Requires</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationRequirement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Description>
   <rdf:Description rdf:about="#isUsedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>Represents the usage of an Information</rdfs:label>
-    <owl:inverseOf rdf:resource="#usesInformation"/>
-    <rdfs:domain rdf:resource="#Information"/>
-    <rdfs:range rdf:resource="#InformationUsage"/>
     <owl:propertyDisjointWith rdf:resource="#generatesInformation"/>
+    <owl:inverseOf rdf:resource="#usesInformation"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#InformationUsage"/>
+    <rdfs:label>Represents the usage of an Information</rdfs:label>
+    <rdfs:domain rdf:resource="#Information"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#priority">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>priority</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationRequirement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#derivedFromBPMN">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label>derived from BPMN object</rdfs:label>
+    <rdfs:domain rdf:nodeID="A0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration">
+    <sh:prefix>bpmn2</sh:prefix>
+    <sh:namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.omg.org/spec/BPMN/20100524/MODEL#</sh:namespace>
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PrefixDeclaration"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasSpecification">
-    <rdfs:domain rdf:resource="#Information"/>
+    <owl:inverseOf rdf:resource="#isSpecificationOf"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#InformationDeliverySpecification"/>
     <rdfs:label>has specification</rdfs:label>
-    <owl:inverseOf rdf:resource="#isSpecificationOf"/>
+    <rdfs:domain rdf:resource="#Information"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#statusSystem">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label>status system</rdfs:label>
+    <rdfs:domain rdf:resource="#InformationStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
 </rdf:RDF>
 
