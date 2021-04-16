@@ -1,17 +1,14 @@
-# baseURI: https://icdd.vm.rub.de/ontology/idpo
-# imports: http://topbraid.org/tosh
+# baseURI: http://w3id.org/idpo
 # imports: http://www.w3.org/ns/prov-o#
 # imports: http://www.w3.org/ns/shacl#
 # prefix: idpo
 
 @prefix bpmn2: <http://www.omg.org/spec/BPMN/20100524/MODEL#> .
-@prefix cc: <http://creativecommons.org/ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
-@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix idpo: <https://icdd.vm.rub.de/ontology/idpo#> .
-@prefix list: <https://w3id.org/list#> .
+@prefix idpo: <http://w3id.org/idpo#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -23,31 +20,27 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-bpmn2:PrefixDeclaration
-  rdf:type sh:PrefixDeclaration ;
-  sh:namespace "http://www.omg.org/spec/BPMN/20100524/MODEL#"^^xsd:anyURI ;
-  sh:prefix "bpmn2" ;
-.
-<https://icdd.vm.rub.de/ontology/idpo>
+<http://w3id.org/idpo>
   rdf:type owl:Ontology ;
+  dcterms:created "2020-03-30"^^xsd:date ;
+  dcterms:creator [
+      rdf:type foaf:Person ;
+      foaf:name "Philipp Hagedorn, Ruhr-University Bochum" ;
+    ] ;
   dcterms:description "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology. It provides SHACL templates for validating information requirements and delivery specifications." ;
+  dcterms:license "https://creativecommons.org/licenses/by-sa/4.0/" ;
   dcterms:publisher "Chair of Computing in Engineering, Ruhr-University Bochum" ;
   dcterms:source "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" ;
   dcterms:title "Information Delivery Processes Ontology (IDPO)" ;
-  dcterms:created "2020-03-30"^^xsd:date ;
-  dcterms:license "https://creativecommons.org/licenses/by-sa/4.0/" ;
   owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:imports sh: ;
   owl:versionInfo "v0.1" ;
-  sh:declare bpmn2:PrefixDeclaration ;
   sh:declare idpo:PrefixDeclaration ;
-  dcterms:creator [
-  rdf:type foaf:Person ;
-  foaf:name "Philipp Hagedorn, Ruhr-University Bochum" ;
-].
-
+  sh:declare bpmn2:PrefixDeclaration ;
+.
 idpo:Information
   rdf:type owl:Class ;
+  rdfs:comment "This class is used to represent a set of data summarized as information. Information can be generated and used. Instances of this class can be derived from bpmn2:DataObject individuals. This class is a subClass of prov:Entity which allows to associate additional provenance information." ;
   rdfs:label "Information" ;
   rdfs:seeAlso bpmn2:DataObject ;
   rdfs:subClassOf owl:Thing ;
@@ -55,49 +48,56 @@ idpo:Information
 .
 idpo:InformationDelivery
   rdf:type owl:Class ;
-  rdfs:label "InformationDelivery" ;
+  rdfs:comment "This class is used to represent the activity of generation information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information." ;
+  rdfs:label "Information Delivery" ;
   rdfs:seeAlso bpmn2:Task ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf prov:Activity ;
 .
 idpo:InformationDeliverySpecification
   rdf:type owl:Class ;
-  rdfs:label "InformationDeliverySpecification" ;
+  rdfs:comment "This class contains a set of delivery specifications for an associated information individual." ;
+  rdfs:label "Information Delivery Specification" ;
   rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "InformationDeliverySpecification" ;
+  skos:prefLabel "Information Delivery Specification" ;
 .
 idpo:InformationRequirement
   rdf:type owl:Class ;
-  rdfs:label "InformationRequirement" ;
+  rdfs:comment "This class contains the information requirements for an associated information individual." ;
+  rdfs:label "Information Requirement" ;
   rdfs:subClassOf owl:Thing ;
 .
 idpo:InformationStatus
   rdf:type owl:Class ;
-  rdfs:label "InformationStatus" ;
+  rdfs:comment "This class represents the status of information." ;
+  rdfs:label "Information Status" ;
   rdfs:subClassOf owl:Thing ;
 .
 idpo:InformationUsage
   rdf:type owl:Class ;
-  rdfs:label "InformationUsage" ;
+  rdfs:comment "This class is used to represent the activity of using information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information." ;
+  rdfs:label "Information Usage" ;
   rdfs:seeAlso bpmn2:Task ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf prov:Activity ;
 .
 idpo:PrefixDeclaration
   rdf:type sh:PrefixDeclaration ;
-  sh:namespace "https://icdd.vm.rub.de/ontology/idpo#"^^xsd:anyURI ;
+  sh:namespace "http://w3id.org/idpo#"^^xsd:anyURI ;
   sh:prefix "idpo" ;
 .
 idpo:Project
   rdf:type owl:Class ;
+  rdfs:comment "This class represents a project and hosts the activities for generating and using information and the related persons." ;
   rdfs:label "Project" ;
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Project" ;
 .
 idpo:belongsTo
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Represents the usage of an information inside a project" ;
   rdfs:domain idpo:InformationUsage ;
-  rdfs:label "Represents the usage of an InformationDelivery" ;
+  rdfs:label "belongs to" ;
   rdfs:range idpo:Project ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:hasInformationUsage ;
@@ -105,8 +105,9 @@ idpo:belongsTo
 .
 idpo:deliversFor
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Represents the delivery of an information inside a project" ;
   rdfs:domain idpo:InformationDelivery ;
-  rdfs:label "deliversFor" ;
+  rdfs:label "delivers for" ;
   rdfs:range idpo:Project ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:hasInformationDelivery ;
@@ -114,32 +115,27 @@ idpo:deliversFor
 .
 idpo:deliverySpecification
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Represents the concrete specification of delivered information as a sh:NodeShape oder any other rdfs:Resource" ;
   rdfs:domain idpo:InformationDeliverySpecification ;
-  rdfs:label "deliverySpecification" ;
-  rdfs:range [
-      rdf:type owl:Class ;
-      owl:unionOf (
-          sh:NodeShape
-          rdfs:Resource
-        ) ;
-    ] ;
+  rdfs:label "delivery specification" ;
+  rdfs:range rdfs:Resource ;
+  rdfs:range sh:NodeShape ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:derivedFromBPMN
   rdf:type owl:ObjectProperty ;
-  rdfs:domain [
-      rdf:type owl:Class ;
-      owl:unionOf (
-          idpo:Information
-          idpo:InformationUsage
-          idpo:InformationDelivery
-        ) ;
-    ] ;
+  rdfs:comment "Associates the BPMN object from which this individual has been derived" ;
+  rdfs:domain idpo:Information ;
+  rdfs:domain idpo:InformationDelivery ;
+  rdfs:domain idpo:InformationUsage ;
   rdfs:label "derived from BPMN object" ;
+  rdfs:range bpmn2:DataObject ;
+  rdfs:range bpmn2:Task ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:dueDate
   rdf:type owl:DatatypeProperty ;
+  rdfs:comment "The due date of an information requirement" ;
   rdfs:domain idpo:InformationRequirement ;
   rdfs:label "due date" ;
   rdfs:range xsd:dateTime ;
@@ -147,8 +143,9 @@ idpo:dueDate
 .
 idpo:generatesInformation
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates generated information to an information delivery" ;
   rdfs:domain idpo:InformationDelivery ;
-  rdfs:label "generatesInformation" ;
+  rdfs:label "generates Information" ;
   rdfs:range idpo:Information ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   rdfs:subPropertyOf prov:generated ;
@@ -157,14 +154,17 @@ idpo:generatesInformation
 .
 idpo:hasData
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates any kind of data to an information" ;
   rdfs:domain idpo:Information ;
   rdfs:label "has data" ;
+  rdfs:range rdfs:Resource ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:hasInformationDelivery
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates an information delivery to a project" ;
   rdfs:domain idpo:Project ;
-  rdfs:label "has nformation delivery" ;
+  rdfs:label "has information delivery" ;
   rdfs:range idpo:InformationDelivery ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:deliversFor ;
@@ -173,8 +173,9 @@ idpo:hasInformationDelivery
 .
 idpo:hasInformationUsage
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates an information usage to a project" ;
   rdfs:domain idpo:Project ;
-  rdfs:label "hasInformationUsage" ;
+  rdfs:label "has information usage" ;
   rdfs:range idpo:InformationUsage ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:belongsTo ;
@@ -183,23 +184,44 @@ idpo:hasInformationUsage
 .
 idpo:hasMember
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a prov:Person to a project" ;
   rdfs:domain idpo:Project ;
-  rdfs:label "has Member" ;
+  rdfs:label "has member" ;
   rdfs:range prov:Person ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:isMemberOf ;
   skos:prefLabel "has Member" ;
 .
+idpo:hasReceivingPerson
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a prov:Person to a information usage" ;
+  rdfs:domain idpo:InformationUsage ;
+  rdfs:label "has receiving person" ;
+  rdfs:range prov:Person ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:prefLabel "has Member" ;
+.
 idpo:hasRequirement
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a requirement to an information" ;
   rdfs:domain idpo:Information ;
   rdfs:label "has requirement" ;
   rdfs:range idpo:InformationRequirement ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:isRequirementOf ;
 .
+idpo:hasSendingPerson
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a prov:Person to a information delivery" ;
+  rdfs:domain idpo:InformationDelivery ;
+  rdfs:label "has sending person" ;
+  rdfs:range prov:Person ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:prefLabel "has Member" ;
+.
 idpo:hasSpecification
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a specification to an information" ;
   rdfs:domain idpo:Information ;
   rdfs:label "has specification" ;
   rdfs:range idpo:InformationDeliverySpecification ;
@@ -208,6 +230,7 @@ idpo:hasSpecification
 .
 idpo:hasStatus
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a status to an information" ;
   rdfs:domain idpo:Information ;
   rdfs:label "has status" ;
   rdfs:range idpo:InformationStatus ;
@@ -217,6 +240,7 @@ idpo:hasStatus
 .
 idpo:isGeneratedBy
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates the originating information delivery to an information" ;
   rdfs:domain idpo:Information ;
   rdfs:label "is generated by" ;
   rdfs:range idpo:InformationDelivery ;
@@ -226,6 +250,7 @@ idpo:isGeneratedBy
 .
 idpo:isMemberOf
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates a project to a prov:Person" ;
   rdfs:domain prov:Person ;
   rdfs:label "is member of" ;
   rdfs:range idpo:Project ;
@@ -235,6 +260,7 @@ idpo:isMemberOf
 .
 idpo:isRequirementOf
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates the originating information to a requirement" ;
   rdfs:domain idpo:InformationRequirement ;
   rdfs:label "is information requirement of" ;
   rdfs:range idpo:Information ;
@@ -244,6 +270,7 @@ idpo:isRequirementOf
 .
 idpo:isSpecificationOf
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates the originating information to a specification" ;
   rdfs:domain idpo:InformationDeliverySpecification ;
   rdfs:label "is specification of" ;
   rdfs:range idpo:Information ;
@@ -253,6 +280,7 @@ idpo:isSpecificationOf
 .
 idpo:isStatusOf
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates the information that uses a status" ;
   rdfs:domain idpo:InformationStatus ;
   rdfs:label "is status of" ;
   rdfs:range idpo:Information ;
@@ -262,8 +290,9 @@ idpo:isStatusOf
 .
 idpo:isUsedBy
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Represents the usage of an information" ;
   rdfs:domain idpo:Information ;
-  rdfs:label "Represents the usage of an Information" ;
+  rdfs:label "is used by" ;
   rdfs:range idpo:InformationUsage ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:inverseOf idpo:usesInformation ;
@@ -271,6 +300,7 @@ idpo:isUsedBy
 .
 idpo:priority
   rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Represents the priority of an information requirement, e. g. high, low, none" ;
   rdfs:domain idpo:InformationRequirement ;
   rdfs:label "priority" ;
   rdfs:range xsd:string ;
@@ -278,13 +308,15 @@ idpo:priority
 .
 idpo:requires
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Represents the concrete requirement of delivered information as a sh:NodeShape oder any other rdfs:Resource on the dataset and/or document level" ;
   rdfs:domain idpo:InformationRequirement ;
-  rdfs:label "Requires" ;
+  rdfs:label "requires" ;
   rdfs:range sh:Shape ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 idpo:status
   rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Represents the status string of a status individual, e. g. Work in Progess, Shared, Published, Archived" ;
   rdfs:domain idpo:InformationStatus ;
   rdfs:label "status" ;
   rdfs:range xsd:string ;
@@ -292,12 +324,21 @@ idpo:status
 .
 idpo:statusSystem
   rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Represents the status system string of a status individual, e. g. ISO19650 or an URI to the originating status system" ;
   rdfs:domain idpo:InformationStatus ;
   rdfs:label "status system" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          xsd:string
+          xsd:anyURI
+        ) ;
+    ] ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
 idpo:suitability
   rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Represents the suitability of information within an information requirement, e. g. regarding to ISO19650" ;
   rdfs:domain idpo:InformationRequirement ;
   rdfs:label "suitablity" ;
   rdfs:range xsd:string ;
@@ -305,12 +346,17 @@ idpo:suitability
 .
 idpo:usesInformation
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "Associates used information to an information usage" ;
   rdfs:domain idpo:InformationUsage ;
-  rdfs:label "usesInformation" ;
+  rdfs:label "uses information" ;
   rdfs:range idpo:Information ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   rdfs:subPropertyOf prov:used ;
   owl:inverseOf idpo:isUsedBy ;
   owl:propertyDisjointWith idpo:generatesInformation ;
 .
-
+bpmn2:PrefixDeclaration
+  rdf:type sh:PrefixDeclaration ;
+  sh:namespace "http://www.omg.org/spec/BPMN/20100524/MODEL#"^^xsd:anyURI ;
+  sh:prefix "bpmn2" ;
+.

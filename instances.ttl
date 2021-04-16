@@ -1,5 +1,5 @@
-# baseURI: http://icdd.vm.rub.de/ontology/idpo/4537_instances
-# imports: https://icdd.vm.rub.de/ontology/idpo
+# baseURI: http://w3id.org/idpo/4537_instances
+# imports: http://w3id.org/idpo
 # prefix: this
 
 @prefix bpmn2: <http://www.omg.org/spec/BPMN/20100524/MODEL#> .
@@ -10,7 +10,7 @@
 @prefix expr: <https://w3id.org/express#> .
 @prefix express: <https://w3id.org/express#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix idpo: <https://icdd.vm.rub.de/ontology/idpo#> .
+@prefix idpo: <http://w3id.org/idpo#> .
 @prefix ifc: <http://www.buildingsmart-tech.org/ifcOWL/IFC2X3_TC1#> .
 @prefix ifch: <http://www.openbim.org/ifcowl/ifcheader#> .
 @prefix ifcowl: <http://ifcowl.openbimstandards.org/IFC2X3_TC1#> .
@@ -23,55 +23,72 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix swa: <http://topbraid.org/swa#> .
-@prefix this: <http://icdd.vm.rub.de/ontology/idpo/4537_instances#> .
+@prefix this: <http://w3id.org/idpo/4537_instances#> .
 @prefix tosh: <http://topbraid.org/tosh#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://icdd.vm.rub.de/ontology/idpo/4537_instances>
+inst:IfcBuilding_37
+  rdf:type ifcowl:IfcBuilding ;
+  rdf:type owl:NamedIndividual ;
+  ifcowl:objectPlacement_IfcProduct inst:IfcLocalPlacement_25 ;
+.
+inst:IfcSite_38
+  rdf:type ifcowl:IfcSite ;
+  rdf:type owl:NamedIndividual ;
+.
+<http://w3id.org/idpo/4537_instances>
   rdf:type owl:Ontology ;
-  owl:imports <https://icdd.vm.rub.de/ontology/idpo> ;
+  owl:imports <http://w3id.org/idpo> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 this:AnyData_1
   rdf:type rdfs:Resource ;
+  rdf:type owl:NamedIndividual ;
 .
 this:InformationDeliverySpecification_1
-  rdf:type idpo:InformationDeliverySpecification ;
-  idpo:deliverySpecification this:PropertyShape_Specification ;
-  idpo:isSpecificationOf this:Information_1 ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> ;
+  <https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> this:PropertyShape_Specification ;
+  <https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> this:Information_1 ;
 .
 this:InformationDelivery_1
-  rdf:type idpo:InformationDelivery ;
-  idpo:deliversFor this:Project_1 ;
-  idpo:generatesInformation this:Information_1 ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> ;
+  <https://icdd.vm.rub.de/ontology/idpo#deliversFor> this:Project_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#generatesInformation> this:Information_1 ;
 .
 this:InformationRequirement_1
-  rdf:type idpo:InformationRequirement ;
-  idpo:requires this:NodeShape_Requirement ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> ;
+  <https://icdd.vm.rub.de/ontology/idpo#requires> this:NodeShape_Requirement ;
 .
 this:InformationStatus_1
-  rdf:type idpo:InformationStatus ;
-  idpo:isStatusOf this:Information_1 ;
-  idpo:status "Published" ;
-  idpo:statusSystem "ISO19650" ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#InformationStatus> ;
+  <https://icdd.vm.rub.de/ontology/idpo#isStatusOf> this:Information_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#status> "Published" ;
+  <https://icdd.vm.rub.de/ontology/idpo#statusSystem> "ISO19650" ;
 .
 this:InformationUsage_1
-  rdf:type idpo:InformationUsage ;
-  idpo:belongsTo this:Project_1 ;
-  idpo:usesInformation this:Information_1 ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> ;
+  <https://icdd.vm.rub.de/ontology/idpo#belongsTo> this:Project_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#usesInformation> this:Information_1 ;
 .
 this:Information_1
-  rdf:type idpo:Information ;
-  idpo:hasData this:Project_1 ;
-  idpo:hasData inst:IfcBuilding_37 ;
-  idpo:hasRequirement this:InformationRequirement_1 ;
-  idpo:hasSpecification this:InformationDeliverySpecification_1 ;
-  idpo:hasStatus this:InformationStatus_1 ;
-  idpo:isGeneratedBy this:InformationDelivery_1 ;
-  idpo:isUsedBy this:InformationUsage_1 ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#Information> ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasData> inst:IfcBuilding_37 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasData> this:Project_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasRequirement> this:InformationRequirement_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasSpecification> this:InformationDeliverySpecification_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasStatus> this:InformationStatus_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> this:InformationDelivery_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#isUsedBy> this:InformationUsage_1 ;
 .
 this:NodeShape_Requirement
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:NodeShape ;
   sh:property this:PropertyShape_Requirement_ifcBuilding ;
   sh:property this:PropertyShape_Requirement_overall ;
@@ -79,24 +96,28 @@ this:NodeShape_Requirement
   sh:targetNode this:Information_1 ;
 .
 this:NodeShape_Specification
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:NodeShape ;
   sh:deactivated "false"^^xsd:boolean ;
   sh:property this:PropertyShape_Specification ;
   sh:targetNode this:Information_1 ;
 .
 this:Person_1
+  rdf:type owl:NamedIndividual ;
   rdf:type prov:Person ;
-  idpo:isMemberOf this:Project_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#isMemberOf> this:Project_1 ;
 .
 this:Project_1
-  rdf:type idpo:Project ;
-  idpo:hasInformationDelivery this:InformationDelivery_1 ;
-  idpo:hasInformationUsage this:InformationUsage_1 ;
-  idpo:hasMember this:Person_1 ;
+  rdf:type owl:NamedIndividual ;
+  rdf:type <https://icdd.vm.rub.de/ontology/idpo#Project> ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> this:InformationDelivery_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> this:InformationUsage_1 ;
+  <https://icdd.vm.rub.de/ontology/idpo#hasMember> this:Person_1 ;
 .
 this:PropertyShape_Requirement_ifcBuilding
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:PropertyShape ;
-  sh:path idpo:hasData ;
+  sh:path <https://icdd.vm.rub.de/ontology/idpo#hasData> ;
   sh:qualifiedMaxCount 1 ;
   sh:qualifiedMinCount 1 ;
   sh:qualifiedValueShape [
@@ -106,13 +127,15 @@ this:PropertyShape_Requirement_ifcBuilding
   sh:qualifiedValueShapesDisjoint "true"^^xsd:boolean ;
 .
 this:PropertyShape_Requirement_overall
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:PropertyShape ;
-  sh:path idpo:hasData ;
+  sh:path <https://icdd.vm.rub.de/ontology/idpo#hasData> ;
   sh:maxCount 2 ;
 .
 this:PropertyShape_Requirement_rdfsResource
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:PropertyShape ;
-  sh:path idpo:hasData ;
+  sh:path <https://icdd.vm.rub.de/ontology/idpo#hasData> ;
   sh:qualifiedMinCount 1 ;
   sh:qualifiedValueShape [
       rdf:type sh:NodeShape ;
@@ -121,8 +144,9 @@ this:PropertyShape_Requirement_rdfsResource
   sh:qualifiedValueShapesDisjoint "true"^^xsd:boolean ;
 .
 this:PropertyShape_Specification
+  rdf:type owl:NamedIndividual ;
   rdf:type sh:PropertyShape ;
-  sh:path idpo:hasData ;
+  sh:path <https://icdd.vm.rub.de/ontology/idpo#hasData> ;
   sh:minCount 1 ;
   sh:qualifiedMinCount 1 ;
   sh:qualifiedValueShape [
@@ -145,11 +169,4 @@ this:PropertyShape_Specification
             ] ;
         ] ;
     ] ;
-.
-inst:IfcBuilding_37
-  rdf:type ifcowl:IfcBuilding ;
-  ifcowl:objectPlacement_IfcProduct inst:IfcLocalPlacement_25 ;
-.
-inst:IfcSite_38
-  rdf:type ifcowl:IfcSite ;
 .

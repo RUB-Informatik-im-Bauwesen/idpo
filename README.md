@@ -38,73 +38,82 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 **Figure 1:** Ontology overview
 ## Classes
 [Information](#Information),
-[InformationDelivery](#InformationDelivery),
-[InformationDeliverySpecification](#InformationDeliverySpecification),
-[InformationRequirement](#InformationRequirement),
-[InformationStatus](#InformationStatus),
-[InformationUsage](#InformationUsage),
+[Information Delivery](#InformationDelivery),
+[Information Delivery Specification](#InformationDeliverySpecification),
+[Information Requirement](#InformationRequirement),
+[Information Status](#InformationStatus),
+[Information Usage](#InformationUsage),
 [Project](#Project),
 ### Information
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#Information`
-Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[prov:Entity](http://www.w3.org/ns/prov#Entity) (c)<br />
-In domain of |[idpo:hasSpecification](hasspecification) (op)<br />[idpo:isUsedBy](RepresentstheusageofanInformation) (op)<br />[idpo:hasData](hasdata) (op)<br />[idpo:hasRequirement](hasrequirement) (op)<br />[idpo:hasStatus](hasstatus) (op)<br />[idpo:isGeneratedBy](isgeneratedby) (op)<br />
-In range of |[idpo:isStatusOf](isstatusof) (op)<br />[idpo:isRequirementOf](isinformationrequirementof) (op)<br />[idpo:generatesInformation](generatesInformation) (op)<br />[idpo:isSpecificationOf](isspecificationof) (op)<br />[idpo:usesInformation](usesInformation) (op)<br />
-### InformationDelivery
+IRI | `http://w3id.org/idpo#Information`
+Description | <p>This class is used to represent a set of data summarized as information. Information can be generated and used. Instances of this class can be derived from bpmn2:DataObject individuals. This class is a subClass of prov:Entity which allows to associate additional provenance information.</p>
+Super-classes |[prov:Entity](http://www.w3.org/ns/prov#Entity) (c)<br />[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+In domain of |[idpo:hasRequirement](hasrequirement) (op)<br />[idpo:isUsedBy](isusedby) (op)<br />[idpo:derivedFromBPMN](derivedfromBPMNobject) (op)<br />[idpo:isGeneratedBy](isgeneratedby) (op)<br />[idpo:hasData](hasdata) (op)<br />[idpo:hasStatus](hasstatus) (op)<br />[idpo:hasSpecification](hasspecification) (op)<br />
+In range of |[idpo:isStatusOf](isstatusof) (op)<br />[idpo:isSpecificationOf](isspecificationof) (op)<br />[idpo:generatesInformation](generatesInformation) (op)<br />[idpo:usesInformation](usesinformation) (op)<br />[idpo:isRequirementOf](isinformationrequirementof) (op)<br />
+### Information Delivery
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#InformationDelivery`
-Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[prov:Activity](http://www.w3.org/ns/prov#Activity) (c)<br />
-In domain of |[idpo:generatesInformation](generatesInformation) (op)<br />[idpo:deliversFor](deliversFor) (op)<br />
-In range of |[idpo:hasInformationDelivery](hasnformationdelivery) (op)<br />[idpo:isGeneratedBy](isgeneratedby) (op)<br />
-### InformationDeliverySpecification
-Property | Value
---- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification`
-Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-In domain of |[idpo:isSpecificationOf](isspecificationof) (op)<br />[idpo:deliverySpecification](deliverySpecification) (op)<br />
-In range of |[idpo:hasSpecification](hasspecification) (op)<br />
-### InformationRequirement
-Property | Value
---- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#InformationRequirement`
-Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-In domain of |[idpo:priority](priority) (dp)<br />[idpo:requires](Requires) (op)<br />[idpo:isRequirementOf](isinformationrequirementof) (op)<br />[idpo:suitability](suitablity) (dp)<br />[idpo:dueDate](duedate) (dp)<br />
-In range of |[idpo:hasRequirement](hasrequirement) (op)<br />
-### InformationStatus
-Property | Value
---- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#InformationStatus`
-Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-In domain of |[idpo:status](status) (dp)<br />[idpo:isStatusOf](isstatusof) (op)<br />[idpo:statusSystem](statussystem) (dp)<br />
-In range of |[idpo:hasStatus](hasstatus) (op)<br />
-### InformationUsage
-Property | Value
---- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#InformationUsage`
+IRI | `http://w3id.org/idpo#InformationDelivery`
+Description | <p>This class is used to represent the activity of generation information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information.</p>
 Super-classes |[prov:Activity](http://www.w3.org/ns/prov#Activity) (c)<br />[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-In domain of |[idpo:belongsTo](RepresentstheusageofanInformationDelivery) (op)<br />[idpo:usesInformation](usesInformation) (op)<br />
-In range of |[idpo:isUsedBy](RepresentstheusageofanInformation) (op)<br />[idpo:hasInformationUsage](hasInformationUsage) (op)<br />
+In domain of |[idpo:deliversFor](deliversfor) (op)<br />[idpo:derivedFromBPMN](derivedfromBPMNobject) (op)<br />[idpo:hasSendingPerson](hassendingperson) (op)<br />[idpo:generatesInformation](generatesInformation) (op)<br />
+In range of |[idpo:hasInformationDelivery](hasinformationdelivery) (op)<br />[idpo:isGeneratedBy](isgeneratedby) (op)<br />
+### Information Delivery Specification
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#InformationDeliverySpecification`
+Description | <p>This class contains a set of delivery specifications for an associated information individual.</p>
+Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+In domain of |[idpo:deliverySpecification](deliveryspecification) (op)<br />[idpo:isSpecificationOf](isspecificationof) (op)<br />
+In range of |[idpo:hasSpecification](hasspecification) (op)<br />
+### Information Requirement
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#InformationRequirement`
+Description | <p>This class contains the information requirements for an associated information individual.</p>
+Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+In domain of |[idpo:dueDate](duedate) (dp)<br />[idpo:priority](priority) (dp)<br />[idpo:requires](requires) (op)<br />[idpo:isRequirementOf](isinformationrequirementof) (op)<br />[idpo:suitability](suitablity) (dp)<br />
+In range of |[idpo:hasRequirement](hasrequirement) (op)<br />
+### Information Status
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#InformationStatus`
+Description | <p>This class represents the status of information.</p>
+Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+In domain of |[idpo:isStatusOf](isstatusof) (op)<br />[idpo:status](status) (dp)<br />[idpo:statusSystem](statussystem) (dp)<br />
+In range of |[idpo:hasStatus](hasstatus) (op)<br />
+### Information Usage
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#InformationUsage`
+Description | <p>This class is used to represent the activity of using information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information.</p>
+Super-classes |[prov:Activity](http://www.w3.org/ns/prov#Activity) (c)<br />[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+In domain of |[idpo:belongsTo](belongsto) (op)<br />[idpo:hasReceivingPerson](hasreceivingperson) (op)<br />[idpo:derivedFromBPMN](derivedfromBPMNobject) (op)<br />[idpo:usesInformation](usesinformation) (op)<br />
+In range of |[idpo:hasInformationUsage](hasinformationusage) (op)<br />[idpo:isUsedBy](isusedby) (op)<br />
 ### Project
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#Project`
+IRI | `http://w3id.org/idpo#Project`
+Description | <p>This class represents a project and hosts the activities for generating and using information and the related persons.</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-In domain of |[idpo:hasInformationUsage](hasInformationUsage) (op)<br />[idpo:hasMember](hasMember) (op)<br />[idpo:hasInformationDelivery](hasnformationdelivery) (op)<br />
-In range of |[idpo:isMemberOf](ismemberof) (op)<br />[idpo:belongsTo](RepresentstheusageofanInformationDelivery) (op)<br />[idpo:deliversFor](deliversFor) (op)<br />
+In domain of |[idpo:hasInformationUsage](hasinformationusage) (op)<br />[idpo:hasInformationDelivery](hasinformationdelivery) (op)<br />[idpo:hasMember](hasmember) (op)<br />
+In range of |[idpo:isMemberOf](ismemberof) (op)<br />[idpo:deliversFor](deliversfor) (op)<br />[idpo:belongsTo](belongsto) (op)<br />
 
 ## Object Properties
-[Represents the usage of an InformationDelivery](#RepresentstheusageofanInformationDelivery),
-[deliversFor](#deliversFor),
-[deliverySpecification](#deliverySpecification),
+[belongs to](#belongsto),
+[delivers for](#deliversfor),
+[delivery specification](#deliveryspecification),
 [derived from BPMN object](#derivedfromBPMNobject),
-[generatesInformation](#generatesInformation),
+[generates Information](#generatesInformation),
 [has data](#hasdata),
-[has nformation delivery](#hasnformationdelivery),
-[hasInformationUsage](#hasInformationUsage),
-[has Member](#hasMember),
+[has information delivery](#hasinformationdelivery),
+[has information usage](#hasinformationusage),
+[has member](#hasmember),
+[has receiving person](#hasreceivingperson),
 [has requirement](#hasrequirement),
+[has sending person](#hassendingperson),
 [has specification](#hasspecification),
 [has status](#hasstatus),
 [is generated by](#isgeneratedby),
@@ -112,30 +121,33 @@ In range of |[idpo:isMemberOf](ismemberof) (op)<br />[idpo:belongsTo](Represents
 [is information requirement of](#isinformationrequirementof),
 [is specification of](#isspecificationof),
 [is status of](#isstatusof),
-[Represents the usage of an Information](#RepresentstheusageofanInformation),
-[Requires](#Requires),
-[usesInformation](#usesInformation),
-[](RepresentstheusageofanInformationDelivery)
-### Represents the usage of an InformationDelivery
+[is used by](#isusedby),
+[requires](#requires),
+[uses information](#usesinformation),
+[](belongsto)
+### belongs to
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#belongsTo`
+IRI | `http://w3id.org/idpo#belongsTo`
+Description | Represents the usage of an information inside a project
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationUsage](InformationUsage) (c)<br />
 Range(s) |[idpo:Project](Project) (c)<br />
-[](deliversFor)
-### deliversFor
+[](deliversfor)
+### delivers for
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#deliversFor`
+IRI | `http://w3id.org/idpo#deliversFor`
+Description | Represents the delivery of an information inside a project
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
 Range(s) |[idpo:Project](Project) (c)<br />
-[](deliverySpecification)
-### deliverySpecification
+[](deliveryspecification)
+### delivery specification
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#deliverySpecification`
+IRI | `http://w3id.org/idpo#deliverySpecification`
+Description | Represents the concrete specification of delivered information as a sh:NodeShape oder any other rdfs:Resource
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationDeliverySpecification](InformationDeliverySpecification) (c)<br />
 Range(s) |[sh:NodeShape](http://www.w3.org/ns/shacl#NodeShape) (c)<br />[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
@@ -143,61 +155,89 @@ Range(s) |[sh:NodeShape](http://www.w3.org/ns/shacl#NodeShape) (c)<br />[rdfs:Re
 ### derived from BPMN object
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN`
+IRI | `http://w3id.org/idpo#derivedFromBPMN`
+Description | Associates the BPMN object from which this individual has been derived
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |([idpo:Information](Information) (c) or [idpo:InformationUsage](InformationUsage) (c) or [idpo:InformationDelivery](InformationDelivery) (c))<br />
+Domain(s) |[idpo:InformationUsage](InformationUsage) (c)<br />[idpo:InformationDelivery](InformationDelivery) (c)<br />[idpo:Information](Information) (c)<br />
+Range(s) |[bpmn2:Task](http://www.omg.org/spec/BPMN/20100524/MODEL#Task) (c)<br />[bpmn2:DataObject](http://www.omg.org/spec/BPMN/20100524/MODEL#DataObject) (c)<br />
 [](generatesInformation)
-### generatesInformation
+### generates Information
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#generatesInformation`
-Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />[prov:generated](http://www.w3.org/ns/prov#generated)<br />
+IRI | `http://w3id.org/idpo#generatesInformation`
+Description | Associates generated information to an information delivery
+Super-properties |[prov:generated](http://www.w3.org/ns/prov#generated)<br />[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
 Range(s) |[idpo:Information](Information) (c)<br />
 [](hasdata)
 ### has data
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasData`
+IRI | `http://w3id.org/idpo#hasData`
+Description | Associates any kind of data to an information
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
-[](hasnformationdelivery)
-### has nformation delivery
+Range(s) |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
+[](hasinformationdelivery)
+### has information delivery
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery`
+IRI | `http://w3id.org/idpo#hasInformationDelivery`
+Description | Associates an information delivery to a project
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Project](Project) (c)<br />
 Range(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
-[](hasInformationUsage)
-### hasInformationUsage
+[](hasinformationusage)
+### has information usage
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage`
+IRI | `http://w3id.org/idpo#hasInformationUsage`
+Description | Associates an information usage to a project
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Project](Project) (c)<br />
 Range(s) |[idpo:InformationUsage](InformationUsage) (c)<br />
-[](hasMember)
-### has Member
+[](hasmember)
+### has member
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasMember`
+IRI | `http://w3id.org/idpo#hasMember`
+Description | Associates a prov:Person to a project
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Project](Project) (c)<br />
+Range(s) |[prov:Person](http://www.w3.org/ns/prov#Person) (c)<br />
+[](hasreceivingperson)
+### has receiving person
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#hasReceivingPerson`
+Description | Associates a prov:Person to a information usage
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[idpo:InformationUsage](InformationUsage) (c)<br />
 Range(s) |[prov:Person](http://www.w3.org/ns/prov#Person) (c)<br />
 [](hasrequirement)
 ### has requirement
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasRequirement`
+IRI | `http://w3id.org/idpo#hasRequirement`
+Description | Associates a requirement to an information
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
 Range(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
+[](hassendingperson)
+### has sending person
+Property | Value
+--- | ---
+IRI | `http://w3id.org/idpo#hasSendingPerson`
+Description | Associates a prov:Person to a information delivery
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
+Range(s) |[prov:Person](http://www.w3.org/ns/prov#Person) (c)<br />
 [](hasspecification)
 ### has specification
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasSpecification`
+IRI | `http://w3id.org/idpo#hasSpecification`
+Description | Associates a specification to an information
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
 Range(s) |[idpo:InformationDeliverySpecification](InformationDeliverySpecification) (c)<br />
@@ -205,7 +245,8 @@ Range(s) |[idpo:InformationDeliverySpecification](InformationDeliverySpecificati
 ### has status
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#hasStatus`
+IRI | `http://w3id.org/idpo#hasStatus`
+Description | Associates a status to an information
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
 Range(s) |[idpo:InformationStatus](InformationStatus) (c)<br />
@@ -213,7 +254,8 @@ Range(s) |[idpo:InformationStatus](InformationStatus) (c)<br />
 ### is generated by
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy`
+IRI | `http://w3id.org/idpo#isGeneratedBy`
+Description | Associates the originating information delivery to an information
 Super-properties |[prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy)<br />[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
 Range(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
@@ -221,7 +263,8 @@ Range(s) |[idpo:InformationDelivery](InformationDelivery) (c)<br />
 ### is member of
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isMemberOf`
+IRI | `http://w3id.org/idpo#isMemberOf`
+Description | Associates a project to a prov:Person
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[prov:Person](http://www.w3.org/ns/prov#Person) (c)<br />
 Range(s) |[idpo:Project](Project) (c)<br />
@@ -229,7 +272,8 @@ Range(s) |[idpo:Project](Project) (c)<br />
 ### is information requirement of
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isRequirementOf`
+IRI | `http://w3id.org/idpo#isRequirementOf`
+Description | Associates the originating information to a requirement
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
 Range(s) |[idpo:Information](Information) (c)<br />
@@ -237,7 +281,8 @@ Range(s) |[idpo:Information](Information) (c)<br />
 ### is specification of
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf`
+IRI | `http://w3id.org/idpo#isSpecificationOf`
+Description | Associates the originating information to a specification
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationDeliverySpecification](InformationDeliverySpecification) (c)<br />
 Range(s) |[idpo:Information](Information) (c)<br />
@@ -245,31 +290,35 @@ Range(s) |[idpo:Information](Information) (c)<br />
 ### is status of
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isStatusOf`
+IRI | `http://w3id.org/idpo#isStatusOf`
+Description | Associates the information that uses a status
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationStatus](InformationStatus) (c)<br />
 Range(s) |[idpo:Information](Information) (c)<br />
-[](RepresentstheusageofanInformation)
-### Represents the usage of an Information
+[](isusedby)
+### is used by
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#isUsedBy`
+IRI | `http://w3id.org/idpo#isUsedBy`
+Description | Represents the usage of an information
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:Information](Information) (c)<br />
 Range(s) |[idpo:InformationUsage](InformationUsage) (c)<br />
-[](Requires)
-### Requires
+[](requires)
+### requires
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#requires`
+IRI | `http://w3id.org/idpo#requires`
+Description | Represents the concrete requirement of delivered information as a sh:NodeShape oder any other rdfs:Resource on the dataset and/or document level
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
 Range(s) |[sh:Shape](http://www.w3.org/ns/shacl#Shape) (c)<br />
-[](usesInformation)
-### usesInformation
+[](usesinformation)
+### uses information
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#usesInformation`
+IRI | `http://w3id.org/idpo#usesInformation`
+Description | Associates used information to an information usage
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />[prov:used](http://www.w3.org/ns/prov#used)<br />
 Domain(s) |[idpo:InformationUsage](InformationUsage) (c)<br />
 Range(s) |[idpo:Information](Information) (c)<br />
@@ -284,7 +333,8 @@ Range(s) |[idpo:Information](Information) (c)<br />
 ### due date
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#dueDate`
+IRI | `http://w3id.org/idpo#dueDate`
+Description | The due date of an information requirement
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
@@ -292,7 +342,8 @@ Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
 ### priority
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#priority`
+IRI | `http://w3id.org/idpo#priority`
+Description | Represents the priority of an information requirement, e. g. high, low, none
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
@@ -300,7 +351,8 @@ Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 ### status
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#status`
+IRI | `http://w3id.org/idpo#status`
+Description | Represents the status string of a status individual, e. g. Work in Progess, Shared, Published, Archived
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[idpo:InformationStatus](InformationStatus) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
@@ -308,14 +360,17 @@ Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 ### status system
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#statusSystem`
+IRI | `http://w3id.org/idpo#statusSystem`
+Description | Represents the status system string of a status individual, e. g. ISO19650 or an URI to the originating status system
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[idpo:InformationStatus](InformationStatus) (c)<br />
+Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />[xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) (c)<br />
 [](suitablity)
 ### suitablity
 Property | Value
 --- | ---
-IRI | `https://icdd.vm.rub.de/ontology/idpo#suitability`
+IRI | `http://w3id.org/idpo#suitability`
+Description | Represents the suitability of information within an information requirement, e. g. regarding to ISO19650
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[idpo:InformationRequirement](InformationRequirement) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
@@ -323,23 +378,19 @@ Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 ## Named Individuals
 ## Namespaces
 * **default (:)**
-  * `https://icdd.vm.rub.de/ontology/idpo#`
+  * `http://w3id.org/idpo#`
 * **bpmn2**
   * `http://www.omg.org/spec/BPMN/20100524/MODEL#`
-* **cc**
-  * `http://creativecommons.org/ns#`
 * **dash**
   * `http://datashapes.org/dash#`
-* **dce**
+* **dc**
   * `http://purl.org/dc/elements/1.1/`
 * **dcterms**
   * `http://purl.org/dc/terms/`
 * **foaf**
   * `http://xmlns.com/foaf/0.1/`
 * **idpo**
-  * `https://icdd.vm.rub.de/ontology/idpo#`
-* **list**
-  * `https://w3id.org/list#`
+  * `http://w3id.org/idpo#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prov**

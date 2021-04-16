@@ -1,224 +1,270 @@
-# baseURI: https://icdd.vm.rub.de/ontology/idpo
-# imports: http://topbraid.org/tosh
+# baseURI: http://w3id.org/idpo
 # imports: http://www.w3.org/ns/prov-o#
 # imports: http://www.w3.org/ns/shacl#
 # prefix: idpo
 
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#usesInformation> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#generated> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#label> "generatesInformation" .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#generatesInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#status> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://icdd.vm.rub.de/ontology/idpo#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
-<https://icdd.vm.rub.de/ontology/idpo#status> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationStatus> .
-<https://icdd.vm.rub.de/ontology/idpo#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#Task> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#label> "InformationUsage" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationUsage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationStatus> <http://www.w3.org/2000/01/rdf-schema#label> "InformationStatus" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
-<https://icdd.vm.rub.de/ontology/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#DataObject> .
-<https://icdd.vm.rub.de/ontology/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#label> "Information" .
-<https://icdd.vm.rub.de/ontology/idpo#Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is status of" .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasStatus> .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#label> "is status of" .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationStatus> .
-<https://icdd.vm.rub.de/ontology/idpo#isStatusOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/shacl#Shape> .
-<https://icdd.vm.rub.de/ontology/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#label> "Requires" .
-<https://icdd.vm.rub.de/ontology/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#requires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#Task> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#label> "InformationDelivery" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:B0d53fc85X2Da759X2D4ecbX2Da2f1X2D3be34b0a723d <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B83d82e81X2D28dfX2D4e24X2D80b8X2D8886d41c447e .
-_:B0d53fc85X2Da759X2D4ecbX2Da2f1X2D3be34b0a723d <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "InformationRequirement" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/ns/shacl#declare> <http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://purl.org/dc/terms/created> "2020-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/prov-o#> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/shacl#> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-sa/4.0/" .
-<https://icdd.vm.rub.de/ontology/idpo> <http://purl.org/dc/elements/1.1/publisher> "Chair of Computing in Engineering, Ruhr-University Bochum" .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/2002/07/owl#imports> <http://topbraid.org/tosh> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/2002/07/owl#versionInfo> "v0.1" .
-<https://icdd.vm.rub.de/ontology/idpo> <http://purl.org/dc/elements/1.1/source> "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" .
-<https://icdd.vm.rub.de/ontology/idpo> <http://www.w3.org/ns/shacl#declare> <https://icdd.vm.rub.de/ontology/idpo#PrefixDeclaration> .
-<https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#range> _:B7c7d8884a22dba2acc217f30a8459efa .
-<https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "deliverySpecification" .
-<https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> .
-<https://icdd.vm.rub.de/ontology/idpo#deliverySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2004/02/skos/core#prefLabel> "has Member" .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isMemberOf> .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Person> .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has Member" .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://icdd.vm.rub.de/ontology/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#label> "priority" .
-<https://icdd.vm.rub.de/ontology/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is information requirement of" .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#label> "is information requirement of" .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B13403f92X2D57ddX2D4584X2D89abX2D52caae403251 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:B13403f92X2D57ddX2D4584X2D89abX2D52caae403251 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2000/01/rdf-schema#Resource> .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isRequirementOf> .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has requirement" .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#hasRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#label> "status system" .
-<https://icdd.vm.rub.de/ontology/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationStatus> .
-<https://icdd.vm.rub.de/ontology/idpo#statusSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:B7c7d8884a22dba2acc217f30a8459efa <http://www.w3.org/2002/07/owl#unionOf> _:B639dbfa1X2D4a9cX2D4755X2Da308X2Dff217eb9d25c .
-_:B7c7d8884a22dba2acc217f30a8459efa <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2004/02/skos/core#prefLabel> "has information delivery" .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#deliversFor> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#label> "has nformation delivery" .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> <http://www.w3.org/2004/02/skos/core#prefLabel> "InformationDeliverySpecification" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "InformationDeliverySpecification" .
-<https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://icdd.vm.rub.de/ontology/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#label> "suitablity" .
-<https://icdd.vm.rub.de/ontology/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#suitability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has specification" .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#hasSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#generatesInformation> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#usesInformation> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "Represents the usage of an Information" .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#isUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:Bb92113900b2b7e978a1a5106a21c3f4a <http://xmlns.com/foaf/0.1/name> "Philipp Hagedorn, Ruhr-University Bochum" .
-_:Bb92113900b2b7e978a1a5106a21c3f4a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
-<https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#label> "derived from BPMN object" .
-<https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#domain> _:B26c8cdb84dca2742f2526e1f458c8a6b .
-<https://icdd.vm.rub.de/ontology/idpo#derivedFromBPMN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/shacl#NodeShape> .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "delivery specification" .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDeliverySpecification> .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the concrete specification of delivered information as a sh:NodeShape oder any other rdfs:Resource" .
+<http://w3id.org/idpo#deliverySpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates any kind of data to an information" .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#label> "has data" .
+<http://w3id.org/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#range> _:Baff091c5X2Da0cfX2D4dfaX2D8870X2Df91f8a0495d5 .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the status system string of a status individual, e. g. ISO19650 or an URI to the originating status system" .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationStatus> .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#label> "status system" .
+<http://w3id.org/idpo#statusSystem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/idpo#InformationStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represents the status of information." .
+<http://w3id.org/idpo#InformationStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#InformationStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Information Status" .
+<http://w3id.org/idpo#InformationStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+_:B20a8f23fe8adce74b7f5929f6d0d5cd0 <http://xmlns.com/foaf/0.1/name> "Philipp Hagedorn, Ruhr-University Bochum" .
+_:B20a8f23fe8adce74b7f5929f6d0d5cd0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#label> "generates Information" .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isGeneratedBy> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates generated information to an information delivery" .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#generated> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDelivery> .
+<http://w3id.org/idpo#generatesInformation> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#usesInformation> .
+_:Baff091c5X2Da0cfX2D4dfaX2D8870X2Df91f8a0495d5 <http://www.w3.org/2002/07/owl#unionOf> _:B148d37a6X2Dc6b3X2D4ae2X2DaefeX2Dcb7e5c8da51e .
+_:Baff091c5X2Da0cfX2D4dfaX2D8870X2Df91f8a0495d5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates the information that uses a status" .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasStatus> .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#label> "is status of" .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is status of" .
+<http://w3id.org/idpo#isStatusOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationStatus> .
+<http://w3id.org/idpo#InformationRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "Information Requirement" .
+<http://w3id.org/idpo#InformationRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#InformationRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "This class contains the information requirements for an associated information individual." .
+<http://w3id.org/idpo#InformationRequirement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#status> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the status string of a status individual, e. g. Work in Progess, Shared, Published, Archived" .
+<http://w3id.org/idpo#status> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationStatus> .
+<http://w3id.org/idpo#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/idpo#status> <http://www.w3.org/2000/01/rdf-schema#label> "status" .
+<http://w3id.org/idpo#status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/idpo#status> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+_:B148d37a6X2Dc6b3X2D4ae2X2DaefeX2Dcb7e5c8da51e <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bdbf09430X2D6475X2D4988X2Db192X2D883c381aaebc .
+_:B148d37a6X2Dc6b3X2D4ae2X2DaefeX2Dcb7e5c8da51e <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/title> "Information Delivery Processes Ontology (IDPO)" .
+<http://w3id.org/idpo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/shacl#> .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/created> "2020-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/idpo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/source> "https://git.inf.bi.ruhr-uni-bochum.de/semweb-ontology/idpo/" .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/description> "The Information Delivery Processes Ontology (IDPO) Ontology is defined for modeling information delivery in the construction planning based on BPMN processes and the PROV-Ontology. It provides SHACL templates for validating information requirements and delivery specifications." .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/creator> _:B20a8f23fe8adce74b7f5929f6d0d5cd0 .
+<http://w3id.org/idpo> <http://www.w3.org/2002/07/owl#versionInfo> "v0.1" .
+<http://w3id.org/idpo> <http://www.w3.org/ns/shacl#declare> <http://w3id.org/idpo#PrefixDeclaration> .
+<http://w3id.org/idpo> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/prov-o#> .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-sa/4.0/" .
+<http://w3id.org/idpo> <http://purl.org/dc/terms/publisher> "Chair of Computing in Engineering, Ruhr-University Bochum" .
+<http://w3id.org/idpo> <http://www.w3.org/ns/shacl#declare> <http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an information delivery to a project" .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#label> "has information delivery" .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#deliversFor> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#hasInformationUsage> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2004/02/skos/core#prefLabel> "has information delivery" .
+<http://w3id.org/idpo#hasInformationDelivery> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationDelivery> .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The due date of an information requirement" .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#label> "due date" .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/idpo#PrefixDeclaration> <http://www.w3.org/ns/shacl#namespace> "http://w3id.org/idpo#"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://w3id.org/idpo#PrefixDeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PrefixDeclaration> .
+<http://w3id.org/idpo#PrefixDeclaration> <http://www.w3.org/ns/shacl#prefix> "idpo" .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates the originating information to a requirement" .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#label> "is information requirement of" .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasRequirement> .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#isRequirementOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is information requirement of" .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an information usage to a project" .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#label> "has information usage" .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#hasInformationDelivery> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#belongsTo> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasInformationUsage> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasInformationUsage" .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a prov:Person to a project" .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isMemberOf> .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Person> .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2004/02/skos/core#prefLabel> "has Member" .
+<http://w3id.org/idpo#hasMember> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the suitability of information within an information requirement, e. g. regarding to ISO19650" .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#label> "suitablity" .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/idpo#suitability> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.omg.org/spec/BPMN/20100524/MODEL#DataObject> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.omg.org/spec/BPMN/20100524/MODEL#Task> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDelivery> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates the BPMN object from which this individual has been derived" .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#label> "derived from BPMN object" .
+<http://w3id.org/idpo#derivedFromBPMN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#comment> "This class is used to represent the activity of generation information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information." .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#label> "Information Delivery" .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#Task> .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#InformationDelivery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
+<http://w3id.org/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the concrete requirement of delivered information as a sh:NodeShape oder any other rdfs:Resource on the dataset and/or document level" .
+<http://w3id.org/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#label> "requires" .
+<http://w3id.org/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#requires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/shacl#Shape> .
+<http://w3id.org/idpo#requires> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a specification to an information" .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isSpecificationOf> .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has specification" .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationDeliverySpecification> .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a requirement to an information" .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has requirement" .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isRequirementOf> .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the priority of an information requirement, e. g. high, low, none" .
+<http://w3id.org/idpo#priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#label> "priority" .
+<http://w3id.org/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/idpo#priority> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationRequirement> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to" .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the usage of an information inside a project" .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasInformationUsage> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#belongsTo> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#deliversFor> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is used by" .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#generatesInformation> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the usage of an information" .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#isUsedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#usesInformation> .
+<http://w3id.org/idpo#InformationDeliverySpecification> <http://www.w3.org/2004/02/skos/core#prefLabel> "Information Delivery Specification" .
+<http://w3id.org/idpo#InformationDeliverySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#InformationDeliverySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "This class contains a set of delivery specifications for an associated information individual." .
+<http://w3id.org/idpo#InformationDeliverySpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#InformationDeliverySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Information Delivery Specification" .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the delivery of an information inside a project" .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#label> "delivers for" .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#belongsTo> .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasInformationDelivery> .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDelivery> .
+<http://w3id.org/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2000/01/rdf-schema#label> "has receiving person" .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Person> .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2004/02/skos/core#prefLabel> "has Member" .
+<http://w3id.org/idpo#hasReceivingPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a prov:Person to a information usage" .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a project to a prov:Person" .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasMember> .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Person> .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Project> .
+<http://w3id.org/idpo#isMemberOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is member of" .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates the originating information to a specification" .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is  specification of" .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is specification of" .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDeliverySpecification> .
+<http://w3id.org/idpo#isSpecificationOf> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#hasSpecification> .
 <http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration> <http://www.w3.org/ns/shacl#prefix> "bpmn2" .
 <http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration> <http://www.w3.org/ns/shacl#namespace> "http://www.omg.org/spec/BPMN/20100524/MODEL#"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://www.omg.org/spec/BPMN/20100524/MODEL#PrefixDeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PrefixDeclaration> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#belongsTo> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#label> "deliversFor" .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#deliversFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is member of" .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasMember> .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Person> .
-<https://icdd.vm.rub.de/ontology/idpo#isMemberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B26c8cdb84dca2742f2526e1f458c8a6b <http://www.w3.org/2002/07/owl#unionOf> _:B0d53fc85X2Da759X2D4ecbX2Da2f1X2D3be34b0a723d .
-_:B26c8cdb84dca2742f2526e1f458c8a6b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2004/02/skos/core#prefLabel> "is  specification of" .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasSpecification> .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is specification of" .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationDeliverySpecification> .
-<https://icdd.vm.rub.de/ontology/idpo#isSpecificationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B83d82e81X2D28dfX2D4e24X2D80b8X2D8886d41c447e <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bd9c54ba6X2D8a84X2D442fX2Db9b7X2Df2d3b105b2cd .
-_:B83d82e81X2D28dfX2D4e24X2D80b8X2D8886d41c447e <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> .
-_:B639dbfa1X2D4a9cX2D4755X2Da308X2Dff217eb9d25c <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B13403f92X2D57ddX2D4584X2D89abX2D52caae403251 .
-_:B639dbfa1X2D4a9cX2D4755X2Da308X2Dff217eb9d25c <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/shacl#NodeShape> .
-<https://icdd.vm.rub.de/ontology/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#label> "has data" .
-<https://icdd.vm.rub.de/ontology/idpo#hasData> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#hasData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:Bd9c54ba6X2D8a84X2D442fX2Db9b7X2Df2d3b105b2cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:Bd9c54ba6X2D8a84X2D442fX2Db9b7X2Df2d3b105b2cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#generatesInformation> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasGeneratedBy> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is generated by" .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#isGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#generatesInformation> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isUsedBy> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#used> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#label> "usesInformation" .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#usesInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#Project> <http://www.w3.org/2004/02/skos/core#prefLabel> "Project" .
-<https://icdd.vm.rub.de/ontology/idpo#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://icdd.vm.rub.de/ontology/idpo#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
-<https://icdd.vm.rub.de/ontology/idpo#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://icdd.vm.rub.de/ontology/idpo#PrefixDeclaration> <http://www.w3.org/ns/shacl#prefix> "idpo" .
-<https://icdd.vm.rub.de/ontology/idpo#PrefixDeclaration> <http://www.w3.org/ns/shacl#namespace> "https://icdd.vm.rub.de/ontology/idpo#"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<https://icdd.vm.rub.de/ontology/idpo#PrefixDeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PrefixDeclaration> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#deliversFor> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#label> "Represents the usage of an InformationDelivery" .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<https://icdd.vm.rub.de/ontology/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#label> "due date" .
-<https://icdd.vm.rub.de/ontology/idpo#dueDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#InformationRequirement> .
-<https://icdd.vm.rub.de/ontology/idpo#dueDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "has status" .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#isStatusOf> .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationStatus> .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status" .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Information> .
-<https://icdd.vm.rub.de/ontology/idpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2004/02/skos/core#prefLabel> "hasInformationUsage" .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://icdd.vm.rub.de/ontology/idpo#hasInformationDelivery> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2002/07/owl#inverseOf> <https://icdd.vm.rub.de/ontology/idpo#belongsTo> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#range> <https://icdd.vm.rub.de/ontology/idpo#InformationUsage> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#label> "hasInformationUsage" .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://icdd.vm.rub.de/ontology/idpo#Project> .
-<https://icdd.vm.rub.de/ontology/idpo#hasInformationUsage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates used information to an information usage" .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#label> "uses information" .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isUsedBy> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <http://w3id.org/idpo#generatesInformation> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#used> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#usesInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationUsage> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates the originating information delivery to an information" .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#generatesInformation> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is generated by" .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasGeneratedBy> .
+<http://w3id.org/idpo#isGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationDelivery> .
+_:Bdbf09430X2D6475X2D4988X2Db192X2D883c381aaebc <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Bdbf09430X2D6475X2D4988X2Db192X2D883c381aaebc <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2000/01/rdf-schema#label> "has sending person" .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2004/02/skos/core#prefLabel> "has Member" .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Person> .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#InformationDelivery> .
+<http://w3id.org/idpo#hasSendingPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a prov:Person to a information delivery" .
+<http://w3id.org/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#comment> "This class is used to represent a set of data summarized as information. Information can be generated and used. Instances of this class can be derived from bpmn2:DataObject individuals. This class is a subClass of prov:Entity which allows to associate additional provenance information." .
+<http://w3id.org/idpo#Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#label> "Information" .
+<http://w3id.org/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#DataObject> .
+<http://w3id.org/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Entity> .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#comment> "This class is used to represent the activity of using information regarding defined information requirements and delivery specifications. Instances of this class can be derived from bpmn2:Task individuals. This class is a subClass of prov:Activity which allows to associate additional provenance information." .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#label> "Information Usage" .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.omg.org/spec/BPMN/20100524/MODEL#Task> .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#InformationUsage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
+<http://w3id.org/idpo#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represents a project and hosts the activities for generating and using information and the related persons." .
+<http://w3id.org/idpo#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/idpo#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project" .
+<http://w3id.org/idpo#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/idpo#Project> <http://www.w3.org/2004/02/skos/core#prefLabel> "Project" .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a status to an information" .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/idpo#Information> .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/idpo#isStatusOf> .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status" .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/idpo#InformationStatus> .
+<http://w3id.org/idpo#hasStatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "has status" .
