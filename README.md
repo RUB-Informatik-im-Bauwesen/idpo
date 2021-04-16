@@ -34,7 +34,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
 
 ## Overview
-
+![Ontology overview](https://icdd.vm.rub.de/ontology/idpo/idpo.svg "Ontology overview")
 **Figure 1:** Ontology overview
 ## Classes
 [Information](#Information),
