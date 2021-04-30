@@ -4,7 +4,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
 ## Metadata
 * **IRI**
-  * `https://icdd.vm.rub.de/ontology/idpo`
+  * `https://w3id.org/idpo#`
 * **Publisher(s)**
   * Chair of Computing in Engineering, Ruhr-University Bochum
 * **Creators(s)**
