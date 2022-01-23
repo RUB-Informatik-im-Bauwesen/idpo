@@ -1,6 +1,6 @@
-Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
+Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4  
 
-# Information Delivery Processes Ontology (IDPO)
+# Information Delivery Processes Ontology (IDPO) [![DOI](https://zenodo.org/badge/363266585.svg)](https://zenodo.org/badge/latestdoi/363266585)
 
 ## Metadata
 * **IRI**
